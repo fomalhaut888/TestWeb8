@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-1.11.1.min.js"></script>
+<style type="text/css">
+.FontSize8{
+	font-size: 8pt;
+}
+.FontSize9{
+	font-size: 9pt;
+}
+.FontSize10{
+	font-size: 10pt;
+}
+.FontSize11{
+	font-size: 11pt;
+}
+.FontSize12{
+	font-size: 12pt;
+}
+.FontSize14{
+	font-size: 14pt;
+}
+.FontSize16{
+	font-size: 16pt;
+}
+.FontSize18{
+	font-size: 18pt;
+}
+.FontSize20{
+	font-size: 20pt;
+}
+.FontSize22{
+	font-size: 22pt;
+}
+.FontSize24{
+	font-size: 24pt;
+}
+.FontSize26{
+	font-size: 26pt;
+}
+.FontSize28{
+	font-size: 28pt;
+}
+.FontSize36{
+	font-size: 36pt;
+}
+.FontSize48{
+	font-size: 48pt;
+}
+.FontSize72{
+	font-size: 72pt;
+}
+</style>
+<script type="text/javascript">
+	var removeAllClass = function(obj){
+		if(obj.hasClass("FontSize8")){
+			obj.removeClass("FontSize8");
+		}
+		if(obj.hasClass("FontSize9")){
+			obj.removeClass("FontSize9");
+		}
+		if(obj.hasClass("FontSize10")){
+			obj.removeClass("FontSize10");
+		}
+		if(obj.hasClass("FontSize11")){
+			obj.removeClass("FontSize11");
+		}
+		if(obj.hasClass("FontSize12")){
+			obj.removeClass("FontSize12");
+		}
+		if(obj.hasClass("FontSize14")){
+			obj.removeClass("FontSize14");
+		}
+		if(obj.hasClass("FontSize16")){
+			obj.removeClass("FontSize16");
+		}
+		if(obj.hasClass("FontSize18")){
+			obj.removeClass("FontSize18");
+		}
+		if(obj.hasClass("FontSize20")){
+			obj.removeClass("FontSize20");
+		}
+		if(obj.hasClass("FontSize22")){
+			obj.removeClass("FontSize22");
+		}
+		if(obj.hasClass("FontSize24")){
+			obj.removeClass("FontSize24");
+		}
+		if(obj.hasClass("FontSize26")){
+			obj.removeClass("FontSize26");
+		}
+		if(obj.hasClass("FontSize28")){
+			obj.removeClass("FontSize28");
+		}
+		if(obj.hasClass("FontSize36")){
+			obj.removeClass("FontSize36");
+		}
+		if(obj.hasClass("FontSize48")){
+			obj.removeClass("FontSize48");
+		}
+		if(obj.hasClass("FontSize72")){
+			obj.removeClass("FontSize72");
+		}
+	};
+	$(document).ready(function() {
+		$('#fsize').change(function(){
+			removeAllClass($('div[id^=font_]'));
+			if($('#fsize').val() != '0'){
+				$('div[id^=font_]').addClass('FontSize' + $('#fsize').val());
+			}
+    	});
+	});
+</script>
+</head>
+<body>
+<div><b>1.font-family:</b>
+	<select id="fsize">
+		<option value="0">default</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+		<option value="14">14</option>
+		<option value="16">16</option>
+		<option value="18">18</option>
+		<option value="20">20</option>
+		<option value="22">22</option>
+		<option value="24">24</option>
+		<option value="26">26</option>
+		<option value="28">28</option>
+		<option value="36">36</option>
+		<option value="48">48</option>
+		<option value="72">72</option>
+	</select>pt
+</div>
+<div id="font_default">Hello! 中文 123！ ~~default</div>
+<hr/>
+<div id="font_Arial Unicode MS" style="font-family: Arial Unicode MS;">Hello! 中文 123！ ~~Arial Unicode MS</div>
+<div id="font_Batang" style="font-family: Batang;">Hello! 中文 123！ ~~Batang</div>
+<div id="font_BatangChe" style="font-family: BatangChe;">Hello! 中文 123！ ~~BatangChe</div>
+<div id="font_Dotum" style="font-family: Dotum;">Hello! 中文 123！ ~~Dotum</div>
+<div id="font_DotumChe" style="font-family: DotumChe;">Hello! 中文 123！ ~~DotumChe</div>
+<div id="font_FangSong" style="font-family: FangSong;">Hello! 中文 123！ ~~FangSong</div>
+<div id="font_Gulim" style="font-family: Gulim;">Hello! 中文 123！ ~~Gulim</div>
+<div id="font_GulimChe" style="font-family: GulimChe;">Hello! 中文 123！ ~~GulimChe</div>
+<div id="font_Gungsuh" style="font-family: Gungsuh;">Hello! 中文 123！ ~~Gungsuh</div>
+<div id="font_GungsuhChe" style="font-family: GungsuhChe;">Hello! 中文 123！ ~~GungsuhChe</div>
+<div id="font_KaiTi" style="font-family: KaiTi;">Hello! 中文 123！ ~~KaiTi</div>
+<div id="font_Malgun Gothic" style="font-family: Malgun Gothic;">Hello! 中文 123！ ~~Malgun Gothic</div>
+<div id="font_Meiryo" style="font-family: Meiryo;">Hello! 中文 123！ ~~Meiryo</div>
+<div id="font_Meiryo UI" style="font-family: Meiryo UI;">Hello! 中文 123！ ~~Meiryo UI</div>
+<div id="font_Microsoft JhengHei UI" style="font-family: Microsoft JhengHei UI;">Hello! 中文 123！ ~~Microsoft JhengHei UI</div>
+<div id="font_Microsoft JhengHei UI Light" style="font-family: Microsoft JhengHei UI Light;">Hello! 中文 123！ ~~Microsoft JhengHei UI Light</div>
+<div id="font_Microsoft YaHei" style="font-family: Microsoft YaHei;">Hello! 中文 123！ ~~Microsoft YaHei</div>
+<div id="font_Microsoft YaHei Light" style="font-family: Microsoft YaHei Light;">Hello! 中文 123！ ~~Microsoft YaHei Light</div>
+<div id="font_Microsoft YaHei UI" style="font-family: Microsoft YaHei UI;">Hello! 中文 123！ ~~Microsoft YaHei UI</div>
+<div id="font_Microsoft YaHei UI Light" style="font-family: Microsoft YaHei UI Light;">Hello! 中文 123！ ~~Microsoft YaHei UI Light</div>
+<div id="font_MS Gothic" style="font-family: MS Gothic;">Hello! 中文 123！ ~~MS Gothic</div>
+<div id="font_MS Mincho" style="font-family: MS Mincho;">Hello! 中文 123！ ~~MS Mincho</div>
+<div id="font_MS PGothic" style="font-family: MS PGothic;">Hello! 中文 123！ ~~MS PGothic</div>
+<div id="font_MS PMincho" style="font-family: MS PMincho;">Hello! 中文 123！ ~~MS PMincho</div>
+<div id="font_MS UI Gothic" style="font-family: MS UI Gothic;">Hello! 中文 123！ ~~MS UI Gothic</div>
+<div id="font_NSimSun" style="font-family: NSimSun;">Hello! 中文 123！ ~~NSimSun</div>
+<div id="font_SimHei" style="font-family: SimHei;">Hello! 中文 123！ ~~SimHei</div>
+<div id="font_SimSun" style="font-family: SimSun;">Hello! 中文 123！ ~~SimSun</div>
+<div id="font_SimSun-ExtB" style="font-family: SimSun-ExtB;">Hello! 中文 123！ ~~SimSun-ExtB</div>
+<div id="font_Yu Gothic" style="font-family: Yu Gothic;">Hello! 中文 123！ ~~Yu Gothic</div>
+<div id="font_Yu Gothic Light" style="font-family: Yu Gothic Light;">Hello! 中文 123！ ~~Yu Gothic Light</div>
+<div id="font_Yu Mincho" style="font-family: Yu Mincho;">Hello! 中文 123！ ~~Yu Mincho</div>
+<div id="font_Yu Mincho Demibold" style="font-family: Yu Mincho Demibold;">Hello! 中文 123！ ~~Yu Mincho Demibold</div>
+<div id="font_Yu Mincho Light" style="font-family: Yu Mincho Light;">Hello! 中文 123！ ~~Yu Mincho Light</div>
+<div id="font_font_Cfont1" style="font-family: 細明體;">Hello! 中文 123！ ~~細明體</div>
+<div id="font_Cfont2" style="font-family: 細明體_HKSCS;">Hello! 中文 123！ ~~細明體_HKSCS</div>
+<div id="font_Cfont3" style="font-family: 細明體_HKSCS-ExtB;">Hello! 中文 123！ ~~細明體_HKSCS-ExtB</div>
+<div id="font_cfont4" style="font-family: 細明體-ExtB;">Hello! 中文 123！ ~~細明體-ExtB</div>
+<div id="font_cfont5" style="font-family: 微軟正黑體;">Hello! 中文 123！ ~~微軟正黑體</div>
+<div id="font_cfont6" style="font-family: 微軟正黑體 Light;">Hello! 中文 123！ ~~微軟正黑體 Light</div>
+<div id="font_cfont7" style="font-family: 新細明體;">Hello! 中文 123！ ~~新細明體</div>
+<div id="font_cfont8" style="font-family: 新細明體-ExtB;">Hello! 中文 123！ ~~新細明體-ExtB</div>
+<div id="font_cfont9" style="font-family: 標楷體;">Hello! 中文 123！ ~~標楷體</div>
+<div id="font_Agency FB" style="font-family: Agency FB;">Hello! 中文 123！ ~~Agency FB</div>
+<div id="font_Aharoni" style="font-family: Aharoni;">Hello! 中文 123！ ~~Aharoni</div>
+<div id="font_Albertus Extra Bold" style="font-family: Albertus Extra Bold;">Hello! 中文 123！ ~~Albertus Extra Bold</div>
+<div id="font_Albertus Medium" style="font-family: Albertus Medium;">Hello! 中文 123！ ~~Albertus Medium</div>
+<div id="font_Albertus MT" style="font-family: Albertus MT;">Hello! 中文 123！ ~~Albertus MT</div>
+<div id="font_Albertus MT Lt" style="font-family: Albertus MT Lt;">Hello! 中文 123！ ~~Albertus MT Lt</div>
+<div id="font_Aldhabi" style="font-family: Aldhabi;">Hello! 中文 123！ ~~Aldhabi</div>
+<div id="font_Algerian" style="font-family: Algerian;">Hello! 中文 123！ ~~Algerian</div>
+<div id="font_Andalus" style="font-family: Andalus;">Hello! 中文 123！ ~~Andalus</div>
+<div id="font_Angsana New" style="font-family: Angsana New;">Hello! 中文 123！ ~~Angsana New</div>
+<div id="font_AngsanaUPC" style="font-family: AngsanaUPC;">Hello! 中文 123！ ~~AngsanaUPC</div>
+<div id="font_Antique Olive" style="font-family: Antique Olive;">Hello! 中文 123！ ~~Antique Olive</div>
+<div id="font_Antique Olive Compact" style="font-family: Antique Olive Compact;">Hello! 中文 123！ ~~Antique Olive Compact</div>
+<div id="font_Antique Olive Roman" style="font-family: Antique Olive Roman;">Hello! 中文 123！ ~~Antique Olive Roman</div>
+<div id="font_Aparajita" style="font-family: Aparajita;">Hello! 中文 123！ ~~Aparajita</div>
+<div id="font_Apple Chancery" style="font-family: Apple Chancery;">Hello! 中文 123！ ~~Apple Chancery</div>
+<div id="font_Arabic Typesetting" style="font-family: Arabic Typesetting;">Hello! 中文 123！ ~~Arabic Typesetting</div>
+<div id="font_Arial" style="font-family: Arial;">Hello! 中文 123！ ~~Arial</div>
+<div id="font_Arial Black" style="font-family: Arial Black;">Hello! 中文 123！ ~~Arial Black</div>
+<div id="font_Arial Narrow" style="font-family: Arial Narrow;">Hello! 中文 123！ ~~Arial Narrow</div>
+<div id="font_Arial Rounded MT Bold" style="font-family: Arial Rounded MT Bold;">Hello! 中文 123！ ~~Arial Rounded MT Bold</div>
+<div id="font_Baskerville Old Face" style="font-family: Baskerville Old Face;">Hello! 中文 123！ ~~Baskerville Old Face</div>
+<div id="font_Bauhaus 93" style="font-family: Bauhaus 93;">Hello! 中文 123！ ~~Bauhaus 93</div>
+<div id="font_Bell MT" style="font-family: Bell MT;">Hello! 中文 123！ ~~Bell MT</div>
+<div id="font_Berlin Sans FB" style="font-family: Berlin Sans FB;">Hello! 中文 123！ ~~Berlin Sans FB</div>
+<div id="font_Berlin Sans FB Demi" style="font-family: Berlin Sans FB Demi;">Hello! 中文 123！ ~~Berlin Sans FB Demi</div>
+<div id="font_Bernard MT Condensed" style="font-family: Bernard MT Condensed;">Hello! 中文 123！ ~~Bernard MT Condensed</div>
+<div id="font_Blackadder ITC" style="font-family: Blackadder ITC;">Hello! 中文 123！ ~~Blackadder ITC</div>
+<div id="font_Bodoni" style="font-family: Bodoni;">Hello! 中文 123！ ~~Bodoni</div>
+<div id="font_Bodoni MT Black" style="font-family: Bodoni MT Black;">Hello! 中文 123！ ~~Bodoni MT Black</div>
+<div id="font_Bodoni MT Condensed" style="font-family: Bodoni MT Condensed;">Hello! 中文 123！ ~~Bodoni MT Condensed</div>
+<div id="font_Bodoni MT Poster Compressed" style="font-family: Bodoni MT Poster Compressed;">Hello! 中文 123！ ~~Bodoni MT Poster Compressed</div>
+<div id="font_Bodoni Poster" style="font-family: Bodoni Poster;">Hello! 中文 123！ ~~Bodoni Poster</div>
+<div id="font_Bodoni PosterCompressed" style="font-family: Bodoni PosterCompressed;">Hello! 中文 123！ ~~Bodoni PosterCompressed</div>
+<div id="font_Book Antiqua" style="font-family: Book Antiqua;">Hello! 中文 123！ ~~Book Antiqua</div>
+<div id="font_Bookman Old Style" style="font-family: Bookman Old Style;">Hello! 中文 123！ ~~Bookman Old Style</div>
+<div id="font_Bookshelf Symbol 7" style="font-family: Bookshelf Symbol 7;">Hello! 中文 123！ ~~Bookshelf Symbol 7</div>
+<div id="font_Bradley Hand ITC" style="font-family: Bradley Hand ITC;">Hello! 中文 123！ ~~Bradley Hand ITC</div>
+<div id="font_Britannic Bold" style="font-family: Britannic Bold;">Hello! 中文 123！ ~~Britannic Bold</div>
+<div id="font_Broadway" style="font-family: Broadway;">Hello! 中文 123！ ~~Broadway</div>
+<div id="font_Browallia New" style="font-family: Browallia New;">Hello! 中文 123！ ~~Browallia New</div>
+<div id="font_BrowalliaUPC" style="font-family: BrowalliaUPC;">Hello! 中文 123！ ~~BrowalliaUPC</div>
+<div id="font_Brush Script MT" style="font-family: Brush Script MT;">Hello! 中文 123！ ~~Brush Script MT</div>
+<div id="font_Calibri" style="font-family: Calibri;">Hello! 中文 123！ ~~Calibri</div>
+<div id="font_Calibri Light" style="font-family: Calibri Light;">Hello! 中文 123！ ~~Calibri Light</div>
+<div id="font_Californian FB" style="font-family: Californian FB;">Hello! 中文 123！ ~~Californian FB</div>
+<div id="font_Calisto MT" style="font-family: Calisto MT;">Hello! 中文 123！ ~~Calisto MT</div>
+<div id="font_Cambria" style="font-family: Cambria;">Hello! 中文 123！ ~~Cambria</div>
+<div id="font_Cambria Math" style="font-family: Cambria Math;">Hello! 中文 123！ ~~Cambria Math</div>
+<div id="font_Candara" style="font-family: Candara;">Hello! 中文 123！ ~~Candara</div>
+<div id="font_Candid" style="font-family: Candid;">Hello! 中文 123！ ~~Candid</div>
+<div id="font_Castellar" style="font-family: Castellar;">Hello! 中文 123！ ~~Castellar</div>
+<div id="font_Centaur" style="font-family: Centaur;">Hello! 中文 123！ ~~Centaur</div>
+<div id="font_Century" style="font-family: Century;">Hello! 中文 123！ ~~Century</div>
+<div id="font_Century Gothic" style="font-family: Century Gothic;">Hello! 中文 123！ ~~Century Gothic</div>
+<div id="font_Century Schoolbook" style="font-family: Century Schoolbook;">Hello! 中文 123！ ~~Century Schoolbook</div>
+<div id="font_CG Omega" style="font-family: CG Omega;">Hello! 中文 123！ ~~CG Omega</div>
+<div id="font_CG Times" style="font-family: CG Times;">Hello! 中文 123！ ~~CG Times</div>
+<div id="font_Chicago" style="font-family: Chicago;">Hello! 中文 123！ ~~Chicago</div>
+<div id="font_Chiller" style="font-family: Chiller;">Hello! 中文 123！ ~~Chiller</div>
+<div id="font_Clarendon" style="font-family: Clarendon;">Hello! 中文 123！ ~~Clarendon</div>
+<div id="font_Clarendon Condensed" style="font-family: Clarendon Condensed;">Hello! 中文 123！ ~~Clarendon Condensed</div>
+<div id="font_Clarendon Light" style="font-family: Clarendon Light;">Hello! 中文 123！ ~~Clarendon Light</div>
+<div id="font_Colonna MT" style="font-family: Colonna MT;">Hello! 中文 123！ ~~Colonna MT</div>
+<div id="font_Comic Sans MS" style="font-family: Comic Sans MS;">Hello! 中文 123！ ~~Comic Sans MS</div>
+<div id="font_Consolas" style="font-family: Consolas;">Hello! 中文 123！ ~~Consolas</div>
+<div id="font_Constantia" style="font-family: Constantia;">Hello! 中文 123！ ~~Constantia</div>
+<div id="font_Cooper Black" style="font-family: Cooper Black;">Hello! 中文 123！ ~~Cooper Black</div>
+<div id="font_Copperplate Gothic Bold" style="font-family: Copperplate Gothic Bold;">Hello! 中文 123！ ~~Copperplate Gothic Bold</div>
+<div id="font_Copperplate Gothic Light" style="font-family: Copperplate Gothic Light;">Hello! 中文 123！ ~~Copperplate Gothic Light</div>
+<div id="font_Copperplate32bc" style="font-family: Copperplate32bc;">Hello! 中文 123！ ~~Copperplate32bc</div>
+<div id="font_Copperplate33bc" style="font-family: Copperplate33bc;">Hello! 中文 123！ ~~Copperplate33bc</div>
+<div id="font_Corbel" style="font-family: Corbel;">Hello! 中文 123！ ~~Corbel</div>
+<div id="font_Cordia New" style="font-family: Cordia New;">Hello! 中文 123！ ~~Cordia New</div>
+<div id="font_CordiaUPC" style="font-family: CordiaUPC;">Hello! 中文 123！ ~~CordiaUPC</div>
+<div id="font_Coronet" style="font-family: Coronet;">Hello! 中文 123！ ~~Coronet</div>
+<div id="font_Courier" style="font-family: Courier;">Hello! 中文 123！ ~~Courier</div>
+<div id="font_Courier New" style="font-family: Courier New;">Hello! 中文 123！ ~~Courier New</div>
+<div id="font_CourierPS" style="font-family: CourierPS;">Hello! 中文 123！ ~~CourierPS</div>
+<div id="font_Curlz MT" style="font-family: Curlz MT;">Hello! 中文 123！ ~~Curlz MT</div>
+<div id="font_DaunPenh" style="font-family: DaunPenh;">Hello! 中文 123！ ~~DaunPenh</div>
+<div id="font_David" style="font-family: David;">Hello! 中文 123！ ~~David</div>
+<div id="font_DejaVu Sans Mono" style="font-family: DejaVu Sans Mono;">Hello! 中文 123！ ~~DejaVu Sans Mono</div>
+<div id="font_DilleniaUPC" style="font-family: DilleniaUPC;">Hello! 中文 123！ ~~DilleniaUPC</div>
+<div id="font_DokChampa" style="font-family: DokChampa;">Hello! 中文 123！ ~~DokChampa</div>
+<div id="font_Ebrima" style="font-family: Ebrima;">Hello! 中文 123！ ~~Ebrima</div>
+<div id="font_Edwardian Script ITC" style="font-family: Edwardian Script ITC;">Hello! 中文 123！ ~~Edwardian Script ITC</div>
+<div id="font_Elephant" style="font-family: Elephant;">Hello! 中文 123！ ~~Elephant</div>
+<div id="font_Engravers MT" style="font-family: Engravers MT;">Hello! 中文 123！ ~~Engravers MT</div>
+<div id="font_Eras Bold ITC" style="font-family: Eras Bold ITC;">Hello! 中文 123！ ~~Eras Bold ITC</div>
+<div id="font_Eras Demi ITC" style="font-family: Eras Demi ITC;">Hello! 中文 123！ ~~Eras Demi ITC</div>
+<div id="font_Eras Light ITC" style="font-family: Eras Light ITC;">Hello! 中文 123！ ~~Eras Light ITC</div>
+<div id="font_Eras Medium ITC" style="font-family: Eras Medium ITC;">Hello! 中文 123！ ~~Eras Medium ITC</div>
+<div id="font_Estrangelo Edessa" style="font-family: Estrangelo Edessa;">Hello! 中文 123！ ~~Estrangelo Edessa</div>
+<div id="font_EucrosiaUPC" style="font-family: EucrosiaUPC;">Hello! 中文 123！ ~~EucrosiaUPC</div>
+<div id="font_Euphemia" style="font-family: Euphemia;">Hello! 中文 123！ ~~Euphemia</div>
+<div id="font_Eurostile" style="font-family: Eurostile;">Hello! 中文 123！ ~~Eurostile</div>
+<div id="font_Eurostile Bold" style="font-family: Eurostile Bold;">Hello! 中文 123！ ~~Eurostile Bold</div>
+<div id="font_Eurostile ExtendedTwo" style="font-family: Eurostile ExtendedTwo;">Hello! 中文 123！ ~~Eurostile ExtendedTwo</div>
+<div id="font_Felix Titling" style="font-family: Felix Titling;">Hello! 中文 123！ ~~Felix Titling</div>
+<div id="font_Footlight MT Light" style="font-family: Footlight MT Light;">Hello! 中文 123！ ~~Footlight MT Light</div>
+<div id="font_Forte" style="font-family: Forte;">Hello! 中文 123！ ~~Forte</div>
+<div id="font_Franklin Gothic Book" style="font-family: Franklin Gothic Book;">Hello! 中文 123！ ~~Franklin Gothic Book</div>
+<div id="font_Franklin Gothic Demi" style="font-family: Franklin Gothic Demi;">Hello! 中文 123！ ~~Franklin Gothic Demi</div>
+<div id="font_Franklin Gothic Demi Cond" style="font-family: Franklin Gothic Demi Cond;">Hello! 中文 123！ ~~Franklin Gothic Demi Cond</div>
+<div id="font_Franklin Gothic Heavy" style="font-family: Franklin Gothic Heavy;">Hello! 中文 123！ ~~Franklin Gothic Heavy</div>
+<div id="font_Franklin Gothic Medium" style="font-family: Franklin Gothic Medium;">Hello! 中文 123！ ~~Franklin Gothic Medium</div>
+<div id="font_Franklin Gothic Medium Cond" style="font-family: Franklin Gothic Medium Cond;">Hello! 中文 123！ ~~Franklin Gothic Medium Cond</div>
+<div id="font_FrankRuehl" style="font-family: FrankRuehl;">Hello! 中文 123！ ~~FrankRuehl</div>
+<div id="font_FreesiaUPC" style="font-family: FreesiaUPC;">Hello! 中文 123！ ~~FreesiaUPC</div>
+<div id="font_Freestyle Script" style="font-family: Freestyle Script;">Hello! 中文 123！ ~~Freestyle Script</div>
+<div id="font_French Script MT" style="font-family: French Script MT;">Hello! 中文 123！ ~~French Script MT</div>
+<div id="font_Gabriola" style="font-family: Gabriola;">Hello! 中文 123！ ~~Gabriola</div>
+<div id="font_Gadugi" style="font-family: Gadugi;">Hello! 中文 123！ ~~Gadugi</div>
+<div id="font_Garamond" style="font-family: Garamond;">Hello! 中文 123！ ~~Garamond</div>
+<div id="font_Gautami" style="font-family: Gautami;">Hello! 中文 123！ ~~Gautami</div>
+<div id="font_Geneva" style="font-family: Geneva;">Hello! 中文 123！ ~~Geneva</div>
+<div id="font_Georgia" style="font-family: Georgia;">Hello! 中文 123！ ~~Georgia</div>
+<div id="font_Gigi" style="font-family: Gigi;">Hello! 中文 123！ ~~Gigi</div>
+<div id="font_Gill Sans MT" style="font-family: Gill Sans MT;">Hello! 中文 123！ ~~Gill Sans MT</div>
+<div id="font_Gill Sans MT Condensed" style="font-family: Gill Sans MT Condensed;">Hello! 中文 123！ ~~Gill Sans MT Condensed</div>
+<div id="font_Gill Sans MT Ext Condensed Bold" style="font-family: Gill Sans MT Ext Condensed Bold;">Hello! 中文 123！ ~~Gill Sans MT Ext Condensed Bold</div>
+<div id="font_Gill Sans Ultra Bold" style="font-family: Gill Sans Ultra Bold;">Hello! 中文 123！ ~~Gill Sans Ultra Bold</div>
+<div id="font_Gill Sans Ultra Bold Condensed" style="font-family: Gill Sans Ultra Bold Condensed;">Hello! 中文 123！ ~~Gill Sans Ultra Bold Condensed</div>
+<div id="font_GillSans" style="font-family: GillSans;">Hello! 中文 123！ ~~GillSans</div>
+<div id="font_GillSans Condensed" style="font-family: GillSans Condensed;">Hello! 中文 123！ ~~GillSans Condensed</div>
+<div id="font_GillSans ExtraBold" style="font-family: GillSans ExtraBold;">Hello! 中文 123！ ~~GillSans ExtraBold</div>
+<div id="font_GillSans Light" style="font-family: GillSans Light;">Hello! 中文 123！ ~~GillSans Light</div>
+<div id="font_Gisha" style="font-family: Gisha;">Hello! 中文 123！ ~~Gisha</div>
+<div id="font_Gloucester MT Extra Condensed" style="font-family: Gloucester MT Extra Condensed;">Hello! 中文 123！ ~~Gloucester MT Extra Condensed</div>
+<div id="font_Goudy" style="font-family: Goudy;">Hello! 中文 123！ ~~Goudy</div>
+<div id="font_Goudy ExtraBold" style="font-family: Goudy ExtraBold;">Hello! 中文 123！ ~~Goudy ExtraBold</div>
+<div id="font_Goudy Old Style" style="font-family: Goudy Old Style;">Hello! 中文 123！ ~~Goudy Old Style</div>
+<div id="font_Goudy Stout" style="font-family: Goudy Stout;">Hello! 中文 123！ ~~Goudy Stout</div>
+<div id="font_Haettenschweiler" style="font-family: Haettenschweiler;">Hello! 中文 123！ ~~Haettenschweiler</div>
+<div id="font_Harlow Solid Italic" style="font-family: Harlow Solid Italic;">Hello! 中文 123！ ~~Harlow Solid Italic</div>
+<div id="font_Harrington" style="font-family: Harrington;">Hello! 中文 123！ ~~Harrington</div>
+<div id="font_Helvetica" style="font-family: Helvetica;">Hello! 中文 123！ ~~Helvetica</div>
+<div id="font_Helvetica Condensed" style="font-family: Helvetica Condensed;">Hello! 中文 123！ ~~Helvetica Condensed</div>
+<div id="font_Helvetica Narrow" style="font-family: Helvetica Narrow;">Hello! 中文 123！ ~~Helvetica Narrow</div>
+<div id="font_High Tower Text" style="font-family: High Tower Text;">Hello! 中文 123！ ~~High Tower Text</div>
+<div id="font_Hoefler Text Black" style="font-family: Hoefler Text Black;">Hello! 中文 123！ ~~Hoefler Text Black</div>
+<div id="font_Hoefler Text Ornaments" style="font-family: Hoefler Text Ornaments;">Hello! 中文 123！ ~~Hoefler Text Ornaments</div>
+<div id="font_Hoefler Text Regular" style="font-family: Hoefler Text Regular;">Hello! 中文 123！ ~~Hoefler Text Regular</div>
+<div id="font_Impact" style="font-family: Impact;">Hello! 中文 123！ ~~Impact</div>
+<div id="font_Imprint MT Shadow" style="font-family: Imprint MT Shadow;">Hello! 中文 123！ ~~Imprint MT Shadow</div>
+<div id="font_Informal Roman" style="font-family: Informal Roman;">Hello! 中文 123！ ~~Informal Roman</div>
+<div id="font_IrisUPC" style="font-family: IrisUPC;">Hello! 中文 123！ ~~IrisUPC</div>
+<div id="font_Iskoola Pota" style="font-family: Iskoola Pota;">Hello! 中文 123！ ~~Iskoola Pota</div>
+<div id="font_ITC Avant Garde Gothic" style="font-family: ITC Avant Garde Gothic;">Hello! 中文 123！ ~~ITC Avant Garde Gothic</div>
+<div id="font_ITC Bookman" style="font-family: ITC Bookman;">Hello! 中文 123！ ~~ITC Bookman</div>
+<div id="font_ITC Zapf Chancery" style="font-family: ITC Zapf Chancery;">Hello! 中文 123！ ~~ITC Zapf Chancery</div>
+<div id="font_ITC Zapf Dingbats" style="font-family: ITC Zapf Dingbats;">Hello! 中文 123！ ~~ITC Zapf Dingbats</div>
+<div id="font_JasmineUPC" style="font-family: JasmineUPC;">Hello! 中文 123！ ~~JasmineUPC</div>
+<div id="font_Javanese Text" style="font-family: Javanese Text;">Hello! 中文 123！ ~~Javanese Text</div>
+<div id="font_Joanna MT" style="font-family: Joanna MT;">Hello! 中文 123！ ~~Joanna MT</div>
+<div id="font_Jokerman" style="font-family: Jokerman;">Hello! 中文 123！ ~~Jokerman</div>
+<div id="font_Juice ITC" style="font-family: Juice ITC;">Hello! 中文 123！ ~~Juice ITC</div>
+<div id="font_Kalinga" style="font-family: Kalinga;">Hello! 中文 123！ ~~Kalinga</div>
+<div id="font_Kartika" style="font-family: Kartika;">Hello! 中文 123！ ~~Kartika</div>
+<div id="font_Khmer UI" style="font-family: Khmer UI;">Hello! 中文 123！ ~~Khmer UI</div>
+<div id="font_KodchiangUPC" style="font-family: KodchiangUPC;">Hello! 中文 123！ ~~KodchiangUPC</div>
+<div id="font_Kokila" style="font-family: Kokila;">Hello! 中文 123！ ~~Kokila</div>
+<div id="font_Kristen ITC" style="font-family: Kristen ITC;">Hello! 中文 123！ ~~Kristen ITC</div>
+<div id="font_Kunstler Script" style="font-family: Kunstler Script;">Hello! 中文 123！ ~~Kunstler Script</div>
+<div id="font_Lao UI" style="font-family: Lao UI;">Hello! 中文 123！ ~~Lao UI</div>
+<div id="font_Latha" style="font-family: Latha;">Hello! 中文 123！ ~~Latha</div>
+<div id="font_Leelawadee" style="font-family: Leelawadee;">Hello! 中文 123！ ~~Leelawadee</div>
+<div id="font_Leelawadee UI" style="font-family: Leelawadee UI;">Hello! 中文 123！ ~~Leelawadee UI</div>
+<div id="font_Leelawadee UI Semilight" style="font-family: Leelawadee UI Semilight;">Hello! 中文 123！ ~~Leelawadee UI Semilight</div>
+<div id="font_Letter Gothic" style="font-family: Letter Gothic;">Hello! 中文 123！ ~~Letter Gothic</div>
+<div id="font_Levenim MT" style="font-family: Levenim MT;">Hello! 中文 123！ ~~Levenim MT</div>
+<div id="font_LilyUPC" style="font-family: LilyUPC;">Hello! 中文 123！ ~~LilyUPC</div>
+<div id="font_Lubalin Graph" style="font-family: Lubalin Graph;">Hello! 中文 123！ ~~Lubalin Graph</div>
+<div id="font_Lucida Bright" style="font-family: Lucida Bright;">Hello! 中文 123！ ~~Lucida Bright</div>
+<div id="font_Lucida Calligraphy" style="font-family: Lucida Calligraphy;">Hello! 中文 123！ ~~Lucida Calligraphy</div>
+<div id="font_Lucida Console" style="font-family: Lucida Console;">Hello! 中文 123！ ~~Lucida Console</div>
+<div id="font_Lucida Fax" style="font-family: Lucida Fax;">Hello! 中文 123！ ~~Lucida Fax</div>
+<div id="font_Lucida Handwriting" style="font-family: Lucida Handwriting;">Hello! 中文 123！ ~~Lucida Handwriting</div>
+<div id="font_Lucida Sans" style="font-family: Lucida Sans;">Hello! 中文 123！ ~~Lucida Sans</div>
+<div id="font_Lucida Sans Typewriter" style="font-family: Lucida Sans Typewriter;">Hello! 中文 123！ ~~Lucida Sans Typewriter</div>
+<div id="font_Lucida Sans Unicode" style="font-family: Lucida Sans Unicode;">Hello! 中文 123！ ~~Lucida Sans Unicode</div>
+<div id="font_Magneto" style="font-family: Magneto;">Hello! 中文 123！ ~~Magneto</div>
+<div id="font_Maiandra GD" style="font-family: Maiandra GD;">Hello! 中文 123！ ~~Maiandra GD</div>
+<div id="font_Mangal" style="font-family: Mangal;">Hello! 中文 123！ ~~Mangal</div>
+<div id="font_Marigold" style="font-family: Marigold;">Hello! 中文 123！ ~~Marigold</div>
+<div id="font_Marlett" style="font-family: Marlett;">Hello! 中文 123！ ~~Marlett</div>
+<div id="font_Matura MT Script Capitals" style="font-family: Matura MT Script Capitals;">Hello! 中文 123！ ~~Matura MT Script Capitals</div>
+<div id="font_Microsoft Himalaya" style="font-family: Microsoft Himalaya;">Hello! 中文 123！ ~~Microsoft Himalaya</div>
+<div id="font_Microsoft New Tai Lue" style="font-family: Microsoft New Tai Lue;">Hello! 中文 123！ ~~Microsoft New Tai Lue</div>
+<div id="font_Microsoft PhagsPa" style="font-family: Microsoft PhagsPa;">Hello! 中文 123！ ~~Microsoft PhagsPa</div>
+<div id="font_Microsoft Sans Serif" style="font-family: Microsoft Sans Serif;">Hello! 中文 123！ ~~Microsoft Sans Serif</div>
+<div id="font_Microsoft Tai Le" style="font-family: Microsoft Tai Le;">Hello! 中文 123！ ~~Microsoft Tai Le</div>
+<div id="font_Microsoft Uighur" style="font-family: Microsoft Uighur;">Hello! 中文 123！ ~~Microsoft Uighur</div>
+<div id="font_Microsoft Yi Baiti" style="font-family: Microsoft Yi Baiti;">Hello! 中文 123！ ~~Microsoft Yi Baiti</div>
+<div id="font_Miriam" style="font-family: Miriam;">Hello! 中文 123！ ~~Miriam</div>
+<div id="font_Miriam Fixed" style="font-family: Miriam Fixed;">Hello! 中文 123！ ~~Miriam Fixed</div>
+<div id="font_Mistral" style="font-family: Mistral;">Hello! 中文 123！ ~~Mistral</div>
+<div id="font_Modern No. 20" style="font-family: Modern No. 20;">Hello! 中文 123！ ~~Modern No. 20</div>
+<div id="font_Mona Lisa Recut" style="font-family: Mona Lisa Recut;">Hello! 中文 123！ ~~Mona Lisa Recut</div>
+<div id="font_Monaco" style="font-family: Monaco;">Hello! 中文 123！ ~~Monaco</div>
+<div id="font_Mongolian Baiti" style="font-family: Mongolian Baiti;">Hello! 中文 123！ ~~Mongolian Baiti</div>
+<div id="font_Monotype Corsiva" style="font-family: Monotype Corsiva;">Hello! 中文 123！ ~~Monotype Corsiva</div>
+<div id="font_MoolBoran" style="font-family: MoolBoran;">Hello! 中文 123！ ~~MoolBoran</div>
+<div id="font_MS Outlook" style="font-family: MS Outlook;">Hello! 中文 123！ ~~MS Outlook</div>
+<div id="font_MS Reference Sans Serif" style="font-family: MS Reference Sans Serif;">Hello! 中文 123！ ~~MS Reference Sans Serif</div>
+<div id="font_MS Reference Specialty" style="font-family: MS Reference Specialty;">Hello! 中文 123！ ~~MS Reference Specialty</div>
+<div id="font_MT Extra" style="font-family: MT Extra;">Hello! 中文 123！ ~~MT Extra</div>
+<div id="font_MV Boli" style="font-family: MV Boli;">Hello! 中文 123！ ~~MV Boli</div>
+<div id="font_Myanmar Text" style="font-family: Myanmar Text;">Hello! 中文 123！ ~~Myanmar Text</div>
+<div id="font_Narkisim" style="font-family: Narkisim;">Hello! 中文 123！ ~~Narkisim</div>
+<div id="font_New Century Schoolbook" style="font-family: New Century Schoolbook;">Hello! 中文 123！ ~~New Century Schoolbook</div>
+<div id="font_New York" style="font-family: New York;">Hello! 中文 123！ ~~New York</div>
+<div id="font_Niagara Engraved" style="font-family: Niagara Engraved;">Hello! 中文 123！ ~~Niagara Engraved</div>
+<div id="font_Niagara Solid" style="font-family: Niagara Solid;">Hello! 中文 123！ ~~Niagara Solid</div>
+<div id="font_Nirmala UI" style="font-family: Nirmala UI;">Hello! 中文 123！ ~~Nirmala UI</div>
+<div id="font_Nirmala UI Semilight" style="font-family: Nirmala UI Semilight;">Hello! 中文 123！ ~~Nirmala UI Semilight</div>
+<div id="font_Nyala" style="font-family: Nyala;">Hello! 中文 123！ ~~Nyala</div>
+<div id="font_OCR A Extended" style="font-family: OCR A Extended;">Hello! 中文 123！ ~~OCR A Extended</div>
+<div id="font_Old English Text MT" style="font-family: Old English Text MT;">Hello! 中文 123！ ~~Old English Text MT</div>
+<div id="font_Onyx" style="font-family: Onyx;">Hello! 中文 123！ ~~Onyx</div>
+<div id="font_Optima" style="font-family: Optima;">Hello! 中文 123！ ~~Optima</div>
+<div id="font_Oxford" style="font-family: Oxford;">Hello! 中文 123！ ~~Oxford</div>
+<div id="font_Palace Script MT" style="font-family: Palace Script MT;">Hello! 中文 123！ ~~Palace Script MT</div>
+<div id="font_Palatino" style="font-family: Palatino;">Hello! 中文 123！ ~~Palatino</div>
+<div id="font_Palatino Linotype" style="font-family: Palatino Linotype;">Hello! 中文 123！ ~~Palatino Linotype</div>
+<div id="font_Papyrus" style="font-family: Papyrus;">Hello! 中文 123！ ~~Papyrus</div>
+<div id="font_Parchment" style="font-family: Parchment;">Hello! 中文 123！ ~~Parchment</div>
+<div id="font_Perpetua" style="font-family: Perpetua;">Hello! 中文 123！ ~~Perpetua</div>
+<div id="font_Perpetua Titling MT" style="font-family: Perpetua Titling MT;">Hello! 中文 123！ ~~Perpetua Titling MT</div>
+<div id="font_Plantagenet Cherokee" style="font-family: Plantagenet Cherokee;">Hello! 中文 123！ ~~Plantagenet Cherokee</div>
+<div id="font_Playbill" style="font-family: Playbill;">Hello! 中文 123！ ~~Playbill</div>
+<div id="font_Poor Richard" style="font-family: Poor Richard;">Hello! 中文 123！ ~~Poor Richard</div>
+<div id="font_Pristina" style="font-family: Pristina;">Hello! 中文 123！ ~~Pristina</div>
+<div id="font_Raavi" style="font-family: Raavi;">Hello! 中文 123！ ~~Raavi</div>
+<div id="font_Rage Italic" style="font-family: Rage Italic;">Hello! 中文 123！ ~~Rage Italic</div>
+<div id="font_Ravie" style="font-family: Ravie;">Hello! 中文 123！ ~~Ravie</div>
+<div id="font_Rockwell" style="font-family: Rockwell;">Hello! 中文 123！ ~~Rockwell</div>
+<div id="font_Rockwell Condensed" style="font-family: Rockwell Condensed;">Hello! 中文 123！ ~~Rockwell Condensed</div>
+<div id="font_Rockwell Extra Bold" style="font-family: Rockwell Extra Bold;">Hello! 中文 123！ ~~Rockwell Extra Bold</div>
+<div id="font_Rod" style="font-family: Rod;">Hello! 中文 123！ ~~Rod</div>
+<div id="font_Sakkal Majalla" style="font-family: Sakkal Majalla;">Hello! 中文 123！ ~~Sakkal Majalla</div>
+<div id="font_Script MT Bold" style="font-family: Script MT Bold;">Hello! 中文 123！ ~~Script MT Bold</div>
+<div id="font_Segoe Print" style="font-family: Segoe Print;">Hello! 中文 123！ ~~Segoe Print</div>
+<div id="font_Segoe Script" style="font-family: Segoe Script;">Hello! 中文 123！ ~~Segoe Script</div>
+<div id="font_Segoe UI" style="font-family: Segoe UI;">Hello! 中文 123！ ~~Segoe UI</div>
+<div id="font_Segoe UI Black" style="font-family: Segoe UI Black;">Hello! 中文 123！ ~~Segoe UI Black</div>
+<div id="font_Segoe UI Emoji" style="font-family: Segoe UI Emoji;">Hello! 中文 123！ ~~Segoe UI Emoji</div>
+<div id="font_Segoe UI Light" style="font-family: Segoe UI Light;">Hello! 中文 123！ ~~Segoe UI Light</div>
+<div id="font_Segoe UI Semibold" style="font-family: Segoe UI Semibold;">Hello! 中文 123！ ~~Segoe UI Semibold</div>
+<div id="font_Segoe UI Semilight" style="font-family: Segoe UI Semilight;">Hello! 中文 123！ ~~Segoe UI Semilight</div>
+<div id="font_Segoe UI Symbol" style="font-family: Segoe UI Symbol;">Hello! 中文 123！ ~~Segoe UI Symbol</div>
+<div id="font_Shonar Bangla" style="font-family: Shonar Bangla;">Hello! 中文 123！ ~~Shonar Bangla</div>
+<div id="font_Showcard Gothic" style="font-family: Showcard Gothic;">Hello! 中文 123！ ~~Showcard Gothic</div>
+<div id="font_Shruti" style="font-family: Shruti;">Hello! 中文 123！ ~~Shruti</div>
+<div id="font_Simplified Arabic" style="font-family: Simplified Arabic;">Hello! 中文 123！ ~~Simplified Arabic</div>
+<div id="font_Simplified Arabic Fixed" style="font-family: Simplified Arabic Fixed;">Hello! 中文 123！ ~~Simplified Arabic Fixed</div>
+<div id="font_Sitka Banner" style="font-family: Sitka Banner;">Hello! 中文 123！ ~~Sitka Banner</div>
+<div id="font_Sitka Display" style="font-family: Sitka Display;">Hello! 中文 123！ ~~Sitka Display</div>
+<div id="font_Sitka Heading" style="font-family: Sitka Heading;">Hello! 中文 123！ ~~Sitka Heading</div>
+<div id="font_Sitka Small" style="font-family: Sitka Small;">Hello! 中文 123！ ~~Sitka Small</div>
+<div id="font_Sitka Subheading" style="font-family: Sitka Subheading;">Hello! 中文 123！ ~~Sitka Subheading</div>
+<div id="font_Sitka Text" style="font-family: Sitka Text;">Hello! 中文 123！ ~~Sitka Text</div>
+<div id="font_Snap ITC" style="font-family: Snap ITC;">Hello! 中文 123！ ~~Snap ITC</div>
+<div id="font_StempelGaramond Roman" style="font-family: StempelGaramond Roman;">Hello! 中文 123！ ~~StempelGaramond Roman</div>
+<div id="font_Stencil" style="font-family: Stencil;">Hello! 中文 123！ ~~Stencil</div>
+<div id="font_Sylfaen" style="font-family: Sylfaen;">Hello! 中文 123！ ~~Sylfaen</div>
+<div id="font_Symbol" style="font-family: Symbol;">Hello! 中文 123！ ~~Symbol</div>
+<div id="font_SymbolPS" style="font-family: SymbolPS;">Hello! 中文 123！ ~~SymbolPS</div>
+<div id="font_Taffy" style="font-family: Taffy;">Hello! 中文 123！ ~~Taffy</div>
+<div id="font_Tahoma" style="font-family: Tahoma;">Hello! 中文 123！ ~~Tahoma</div>
+<div id="font_Tempus Sans ITC" style="font-family: Tempus Sans ITC;">Hello! 中文 123！ ~~Tempus Sans ITC</div>
+<div id="font_Times" style="font-family: Times;">Hello! 中文 123！ ~~Times</div>
+<div id="font_Times New Roman" style="font-family: Times New Roman;">Hello! 中文 123！ ~~Times New Roman</div>
+<div id="font_Traditional Arabic" style="font-family: Traditional Arabic;">Hello! 中文 123！ ~~Traditional Arabic</div>
+<div id="font_Trebuchet MS" style="font-family: Trebuchet MS;">Hello! 中文 123！ ~~Trebuchet MS</div>
+<div id="font_Tunga" style="font-family: Tunga;">Hello! 中文 123！ ~~Tunga</div>
+<div id="font_Tw Cen MT" style="font-family: Tw Cen MT;">Hello! 中文 123！ ~~Tw Cen MT</div>
+<div id="font_Tw Cen MT Condensed" style="font-family: Tw Cen MT Condensed;">Hello! 中文 123！ ~~Tw Cen MT Condensed</div>
+<div id="font_Tw Cen MT Condensed Extra Bold" style="font-family: Tw Cen MT Condensed Extra Bold;">Hello! 中文 123！ ~~Tw Cen MT Condensed Extra Bold</div>
+<div id="font_Univers" style="font-family: Univers;">Hello! 中文 123！ ~~Univers</div>
+<div id="font_Univers 45 Light" style="font-family: Univers 45 Light;">Hello! 中文 123！ ~~Univers 45 Light</div>
+<div id="font_Univers 55" style="font-family: Univers 55;">Hello! 中文 123！ ~~Univers 55</div>
+<div id="font_Univers 57 Condensed" style="font-family: Univers 57 Condensed;">Hello! 中文 123！ ~~Univers 57 Condensed</div>
+<div id="font_Univers Condensed" style="font-family: Univers Condensed;">Hello! 中文 123！ ~~Univers Condensed</div>
+<div id="font_Univers Extended" style="font-family: Univers Extended;">Hello! 中文 123！ ~~Univers Extended</div>
+<div id="font_Urdu Typesetting" style="font-family: Urdu Typesetting;">Hello! 中文 123！ ~~Urdu Typesetting</div>
+<div id="font_Utsaah" style="font-family: Utsaah;">Hello! 中文 123！ ~~Utsaah</div>
+<div id="font_Vani" style="font-family: Vani;">Hello! 中文 123！ ~~Vani</div>
+<div id="font_Verdana" style="font-family: Verdana;">Hello! 中文 123！ ~~Verdana</div>
+<div id="font_Vijaya" style="font-family: Vijaya;">Hello! 中文 123！ ~~Vijaya</div>
+<div id="font_Viner Hand ITC" style="font-family: Viner Hand ITC;">Hello! 中文 123！ ~~Viner Hand ITC</div>
+<div id="font_Vivaldi" style="font-family: Vivaldi;">Hello! 中文 123！ ~~Vivaldi</div>
+<div id="font_Vladimir Script" style="font-family: Vladimir Script;">Hello! 中文 123！ ~~Vladimir Script</div>
+<div id="font_Vrinda" style="font-family: Vrinda;">Hello! 中文 123！ ~~Vrinda</div>
+<div id="font_Webdings" style="font-family: Webdings;">Hello! 中文 123！ ~~Webdings</div>
+<div id="font_Wide Latin" style="font-family: Wide Latin;">Hello! 中文 123！ ~~Wide Latin</div>
+<div id="font_Wingdings" style="font-family: Wingdings;">Hello! 中文 123！ ~~Wingdings</div>
+<div id="font_Wingdings 2" style="font-family: Wingdings 2;">Hello! 中文 123！ ~~Wingdings 2</div>
+<div id="font_Wingdings 3" style="font-family: Wingdings 3;">Hello! 中文 123！ ~~Wingdings 3</div>
+</body>
+</html>
