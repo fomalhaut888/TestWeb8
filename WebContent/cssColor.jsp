@@ -23,7 +23,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>CSS Test for color</title>
 <style type="text/css">
 .blockStyle{
 	width: 10px;
