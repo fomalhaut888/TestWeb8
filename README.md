@@ -1,4 +1,4 @@
 TestWeb8
 ========
 
-My Easy Test for html5
+My Good Easy Test for html5
