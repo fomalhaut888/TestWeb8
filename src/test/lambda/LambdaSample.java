@@ -45,9 +45,41 @@ public class LambdaSample {
 				}
 		}
 		
+		//Approach 7: Use Lambda Expressions Throughout Your Application
+		public static void processPersons(List<Person> roster, Predicate<Person> tester,
+				Consumer<Person> block){
+				for(Person p: roster){
+						if(tester.test(p)){
+								block.accept(p);
+						}
+				}
+		}
+		
+		//~Approach 7
+		public static void processPersonWithFunction(List<Person> roster, Predicate<Person> tester,
+				Function<Person, String> mapper, Consumer<String> block){
+				for(Person p: roster){
+						if(tester.test(p)){
+								String data = mapper.apply(p);
+								block.accept(data);
+						}
+				}
+		}
+		
+		//Approach 8 Use Generics More Extensively
+		public static <X, Y> void processElements(Iterable<X> source, Predicate<X> tester,
+				Function<X, Y> mapper, Consumer<Y> block){
+				for(X p: source){
+						if(tester.test(p)){
+								Y data = mapper.apply(p);
+								block.accept(data);
+						}
+				}
+		}
+		
 		public static void main(String args[]){
 				List<Person> roster = Person.getTestData();
-				/*
+				
 				//~Approach3
 				printPersons(roster, new CheckPersonEligibleForSelectiveService());
 				
@@ -65,13 +97,64 @@ public class LambdaSample {
 						(Person p) -> p.getGender() == Person.Sex.MALE  
 								&& p.getAge() >= 18 
 								&& p.getAge() < 25);
-				*/
-				//~Approach6
+				
+				//~Approach 6
 				printPersonsWithPredicate(roster, 
 						p -> p.getGender() == Person.Sex.MALE  
 								&& p.getAge() >= 18 
 								&& p.getAge() < 45);
+				
+				//~Approach 7
+				processPersons(roster,
+						p -> p.getGender() == Person.Sex.MALE  
+						&& p.getAge() >= 18 
+						&& p.getAge() < 45,
+						p -> p.printPerson());
+				
+				//~Approach 7
+				processPersonWithFunction(roster,
+						p -> p.getGender() == Person.Sex.MALE  
+						&& p.getAge() >= 18 
+						&& p.getAge() < 45,
+						p -> p.getEmailAddress(),
+						email -> System.out.println("email:" + email));
+				
+				//~Approach 8
+				processElements(roster,
+						p -> p.getGender() == Person.Sex.MALE  
+						&& p.getAge() >= 18 
+						&& p.getAge() < 45,
+						p -> p.getEmailAddress(),
+						email -> System.out.println("email:" + email));
+				
+				//Approach 9: Use Aggregate Operations That Accept Lambda Expressions as Parameters
+				//The operations filter, map, and forEach are aggregate operations.
+				//Aggregate operations process elements from a stream, not directly from a collection 
+				//		(which is the reason why the first method invoked in this example is stream).
+				//A stream is a sequence of elements.
+				//Unlike a collection, it is not a data structure that stores elements.
+				//Instead, a stream carries values from a source, such as collection, through a pipeline.
+				//A pipeline is a sequence of stream operations, which in this example is filter- map-forEach.
+				//aggregate operations typically accept lambda expressions as parameters
+				//Aggregate Operations lesson: see http://docs.oracle.com/javase/tutorial/collections/streams/index.html
+				roster.stream()
+						.filter(
+								p -> p.getGender() == Person.Sex.MALE  
+								&& p.getAge() >= 18 
+								&& p.getAge() < 45)
+						.map(p -> p.getEmailAddress())
+						.forEach(email -> System.out.println("email:" + email));
 		}
+}
+
+//~Approach 7
+interface Function<T, R>{//any attribute given dynamically
+		R apply(T t);
+}
+
+//~Approach 7
+interface Consumer<T>{
+		void accept(T t);
 }
 
 //~Approach 6
