@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+//Ideal Use Case for Lambda Expressions
 public class LambdaSample {
 		
 		//Approach 1: Create Methods That Search for Members That Match One Characteristic
