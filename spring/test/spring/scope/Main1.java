@@ -2,11 +2,16 @@ package test.spring.scope;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * @author SimonC
+ * Example 1:
+ * singleton v.s. prototype scope
+ */
 public class Main1 {
 
 	public static void main(String[] args) {
 			ClassPathXmlApplicationContext context =
-						new ClassPathXmlApplicationContext("/test/spring/scope/app1.xml");
+						new ClassPathXmlApplicationContext("/test/spring/scope/ex1.xml");
 			//Singleton Scope
 			Bean1 bean11 = context.getBean("bean1", Bean1.class);
 			Bean1 bean12 = context.getBean("bean1", Bean1.class);
@@ -27,7 +32,7 @@ public class Main1 {
 			//		This means that if you define one bean for a particular class in a single Spring container, 
 			//			then the Spring container creates one and only one instance of the class defined by that bean definition.
 			ClassPathXmlApplicationContext context2 =
-					new ClassPathXmlApplicationContext("/test/spring/scope/app1.xml");
+					new ClassPathXmlApplicationContext("/test/spring/scope/ex1.xml");
 			Bean1 bean3 = context2.getBean("bean1", Bean1.class);
 			System.out.println("bean3.id=" + bean3.getId());
 			System.out.println("(bean11 == bean3) = " + (bean11 == bean3));

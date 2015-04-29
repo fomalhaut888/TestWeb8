@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+	<bean id="bean1" class="test.spring.di.Bean2">
+	    <constructor-arg ref="pidBean" />
+	    <constructor-arg ref="priceBean" />
+	</bean>
+	<bean id="bean2" class="test.spring.di.Bean2">
+	    <constructor-arg ref="priceBean" />
+	    <constructor-arg ref="pidBean" />
+	</bean>
+	<bean id="bean3" class="test.spring.di.Bean2">
+	    <constructor-arg type="int" value="21" />
+	    <constructor-arg type="java.lang.String" value="15557" />
+	</bean>
+	<bean id="bean4" class="test.spring.di.Bean2">
+	    <constructor-arg index="1" value="4" />
+	    <constructor-arg index="0" value="15558" />
+	</bean>
+	<bean id="bean5" class="test.spring.di.Bean2">
+	    <constructor-arg name="amount" value="8" />
+	    <constructor-arg name="productId" value="15559" />
+	</bean>
+	
+	
+	<bean id="pidBean" class="java.lang.String">
+	    <constructor-arg value="15555" />
+	</bean>
+	<bean id="priceBean" class="java.lang.Integer">
+	    <constructor-arg value="10" />
+	</bean>
+</beans>

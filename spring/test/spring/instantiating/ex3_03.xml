@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <import resource="ex3_01.xml"/>
+    <import resource="ex3_02.xml"/>
+    
+	<bean id="bean3" class="test.spring.instantiating.Bean3_03" />
+</beans>
