@@ -6,9 +6,9 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 public class Main3 {
 
 	public static void main(String[] args) {
-			System.out.println("Example1:  use ClassPathXmlApplicationContext class to Instantiating Spring Ioc Container(class path).");
 			ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
 					"/test/spring/instantiating/ex3_01.xml");
+			System.out.println("Example1:  use ClassPathXmlApplicationContext class to Instantiating Spring Ioc Container(class path).");
 			Bean3_01 bean11 = context.getBean("bean1", Bean3_01.class);
 			System.out.println("bean11.name=" + bean11.getName());
 			context.close();
@@ -43,6 +43,36 @@ public class Main3 {
 			 Bean3_03 bean3 = context4.getBean("bean3", Bean3_03.class);
 			 System.out.println("bean3.name=" + bean3.getName());
 			 context4.close();
+			 System.out.println("**********************************************************");
+			 
+			 System.out.println(
+					 "Example5:  Instantiating Spring Ioc Container with 2 configuration XMLs, each of which has a bean definition of id 'bean1'.");
+			 ClassPathXmlApplicationContext context5 = new ClassPathXmlApplicationContext(
+					 "/test/spring/instantiating/ex3_01.xml", "/test/spring/instantiating/ex3_04.xml");
+			 Object bean14 = context5.getBean("bean1");
+			 System.out.println("bean14.class.name=" + bean14.getClass().getName());
+			 ClassPathXmlApplicationContext context6 = new ClassPathXmlApplicationContext(
+					 "/test/spring/instantiating/ex3_04.xml", "/test/spring/instantiating/ex3_01.xml");
+			 Object bean15 = context6.getBean("bean1");
+			 System.out.println("bean15.class.name=" + bean15.getClass().getName());
+			 System.out.println("%%% A conclusion: Spring will instantiate the bean1 definition that is in the last XML.");
+			 System.out.println("**********************************************************");
+			 context5.close();
+			 context6.close();
+			 
+			 System.out.println(
+					 "Example6:  Instantiating Spring Ioc Container with a XML that has external configuration definitions, each of which has a bean definition of id 'bean1'.");
+			 ClassPathXmlApplicationContext context7 = new ClassPathXmlApplicationContext(
+					 "/test/spring/instantiating/ex3_05.xml");
+			 Object bean16 = context7.getBean("bean1");
+			 System.out.println("bean16.class.name=" + bean16.getClass().getName());
+			 ClassPathXmlApplicationContext context8 = new ClassPathXmlApplicationContext(
+					 "/test/spring/instantiating/ex3_06.xml");
+			 Object bean17 = context8.getBean("bean1");
+			 System.out.println("bean17.class.name=" + bean17.getClass().getName());
+			 context7.close();
+			 context8.close();
+			 System.out.println("%%% A conclusion: Spring will instantiate the bean1 definition that is in the last external XML included into the main XML.");
 			 System.out.println("**********************************************************");
 	}
 
