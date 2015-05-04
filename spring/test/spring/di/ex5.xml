@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+	<bean id="rectangle" class="test.spring.di.Rectangle5">
+	    <property name="length" ref="length" />
+	    <property name="width" ref="width" />
+	</bean>
+	<bean id="length" class="test.spring.di.Length5">
+	    <property name="value" value="20" />
+	</bean>
+	<bean id="width" class="test.spring.di.Width5">
+	    <property name="value" value="10" />
+	</bean>
+	
+	<bean id="circle" class="test.spring.di.Circle5">
+	    <constructor-arg ref="radius" />
+	    <constructor-arg value="3.14" />
+	</bean>
+	<bean id="radius" class="test.spring.di.Radius5">
+	    <constructor-arg name="value" value="10" />
+	</bean>
+	
+	<bean id="triangle" class="test.spring.di.Triangle5" factory-method="createInstance">
+	    <constructor-arg ref="base" />
+	    <constructor-arg ref="height" />
+	</bean>
+	<bean id="base" class="test.spring.di.Base5">
+	    <constructor-arg name="value" value="20" />
+	</bean>
+	<bean id="height" class="test.spring.di.Height5">
+	    <constructor-arg name="value" value="10" />
+	</bean>
+	
+</beans>

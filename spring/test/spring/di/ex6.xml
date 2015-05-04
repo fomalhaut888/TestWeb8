@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- Wrong configuration because of circular dependencies -->
+    <!-- 
+	<bean id="bean6A" class="test.spring.di.Bean6A">
+	    <constructor-arg ref="bean6B" />
+	</bean>
+	<bean id="bean6B" class="test.spring.di.Bean6B">
+	    <constructor-arg ref="bean6A" />
+	</bean> -->
+	
+	<bean id="bean6A" class="test.spring.di.Bean6A">
+	    <property name="bean6B" ref="bean6B" />
+	</bean>
+	<bean id="bean6B" class="test.spring.di.Bean6B">
+	    <property name="bean6A" ref="bean6A" />
+	</bean>
+</beans>
