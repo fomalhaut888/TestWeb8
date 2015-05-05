@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+	<bean id="bean1" class="test.spring.di.Bean7">
+	    <property name="name" value="Simon Chen" />
+	    <property name="mobile" value="0999888999" />
+	    <property name="reservation" value="3" />
+	    <property name="smoke" value="false" />
+	</bean>
+	
+	<bean id="bean2" class="test.spring.di.Bean7"
+	    p:name="John Hu"
+	    p:mobile="0988999888"
+	    p:reservation="4"
+	    p:smoke="true" />
+	
+	<bean id="bean3" class="test.spring.di.Bean7">
+	    <property name="properties">
+	        <value>
+	            name=Mary Kao
+	            mobile=0922333222
+	            reservation=2
+	            smoke=false
+	        </value>
+	    </property>
+	</bean>
+	
+	<bean id="bean4" class="test.spring.di.Bean72">
+	    <property name="beanId">
+	    	<idref bean="bean1" />
+	    </property>
+	</bean>
+</beans>

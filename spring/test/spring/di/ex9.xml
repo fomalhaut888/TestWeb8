@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+	<bean id="bean1" class="test.spring.di.Bean9">
+	    <property name="target">
+	        <bean id="bean2" class="test.spring.di.Bean7"> <!-- this is the inner bean -->
+            	<property name="name" value="Simon Chen" />
+	    		<property name="mobile" value="0999888999" />
+	    		<property name="reservation" value="3" />
+	    		<property name="smoke" value="false" />
+        	</bean>
+	    </property>
+	</bean>
+</beans>
