@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+	<bean id="bean1" class="test.spring.di.Bean10">
+	    <property name="properties">
+	        <props>
+		        <prop key="show">展會</prop>
+		        <prop key="name">姓名</prop>
+		        <prop key="address">地址</prop>
+		        <prop key="mobile">手機</prop>
+		        <prop key="mobile">手機號碼</prop>
+	        </props>
+	    </property>
+	    <property name="list">
+	        <list>
+	            <value type="int">121</value>
+	            <value>122</value>
+	            <value>121</value>
+	            <value>error</value>
+	            <ref bean="bean2" />
+	        </list>
+	    </property>
+	    <property name="map">
+	        <map>
+	            <entry key="midtermTest" value="95" />
+	            <entry key="midtermTest" value="92" />
+	            <entry key="finalTest">
+	                <value type="int">96</value>
+	            </entry>
+	            <entry key="rank" value-ref="bean3" />
+	        </map>
+	    </property>
+	    <property name="set">
+	        <set>
+	            <value>John</value>
+	            <value>Mary</value>
+	            <value>John</value>
+	            <value>Kevin</value>
+	            <value>Mary</value>
+	        </set>
+	    </property>
+	</bean>
+	<bean id="bean2" class="java.lang.Integer">
+	    <constructor-arg value="124" />
+	</bean>
+	<bean id="bean3" class="java.lang.Integer">
+	    <constructor-arg value="2" />
+	</bean>
+	<bean id="bean4Parent" abstract="true" class="test.spring.di.Bean10">
+	    <property name="properties">
+	        <props>
+		        <prop key="show">展會</prop>
+		        <prop key="name">姓名</prop>
+		        <prop key="address">地址</prop>
+		        <prop key="mobile">手機號碼</prop>
+	        </props>
+	    </property>
+	</bean>
+	<bean id="bean4Child" parent="bean4Parent">
+	    <property name="properties">
+	        <props>
+		        <prop key="id">ID</prop>
+		        <prop key="gender">性別</prop>
+	        </props>
+	    </property>
+	</bean>
+	<bean id="bean5Child" parent="bean4Parent">
+	    <property name="properties">
+	        <props merge="true">
+		        <prop key="id">ID</prop>
+		        <prop key="gender">性別</prop>
+	        </props>
+	    </property>
+	</bean>
+</beans>
