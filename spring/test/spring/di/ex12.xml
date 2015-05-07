@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:c="http://www.springframework.org/schema/c"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+	<bean id="bean1" class="test.spring.di.Bean12">
+	    <property name="product" value="Milk ice" />
+	    <property name="amount" value="2" />
+	    <property name="unitPrice" ref="milkIceUnitPrice" />
+	</bean>
+	<bean id="milkIceUnitPrice" class="java.lang.Integer">
+	    <constructor-arg value="45" />
+	</bean>
+	
+	<bean id="bean2" class="test.spring.di.Bean12"
+	    p:product="Strawberry ice"
+	    p:amount="3"
+	    p:unitPrice-ref="strawberryIceUnitPrice" />
+	<bean id="strawberryIceUnitPrice" class="java.lang.Integer">
+	    <constructor-arg value="80" />
+	</bean>
+	
+	<bean id="bean3" class="test.spring.di.Bean12"
+	    c:product="Chocolate ice"
+	    c:amount="10"
+	    c:unitPrice-ref="chocolateIceUnitPrice" />
+	<bean id="chocolateIceUnitPrice" class="java.lang.Integer"
+	    c:_0="50" />
+</beans>

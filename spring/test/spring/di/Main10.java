@@ -72,6 +72,17 @@ public class Main10 {
 			for(String key: keySet4){
 					System.out.println(key + ":" + properties.getProperty(key));
 			}
+			System.out.println("#####################################");
+			System.out.println("Example6:  Strongly-type collection(generic).");
+			Bean10G bean6 = context.getBean("bean6", Bean10G.class);
+			Map<String, Float> map6 = bean6.getWeight();
+			System.out.println("map.class.name = " + map6.getClass().getName());
+			System.out.println("map.size = " + map6.size());
+			Set<String> keySet6 = map6.keySet();
+			for(String key: keySet6){
+					System.out.println(key + ":" + map6.get(key).floatValue() + "-" + map6.get(key).getClass().getName());
+			}
+			
 			context.close();
 	}
 

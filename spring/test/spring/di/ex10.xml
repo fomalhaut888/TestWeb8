@@ -76,4 +76,14 @@
 	        </props>
 	    </property>
 	</bean>
+	<bean id="bean6" class="test.spring.di.Bean10G">
+	    <property name="weight">
+		    <map>
+		        <entry key="Mary" value="45.5" />
+		        <entry key="John" value="80.0" />
+		        <entry key="Kelly" value="42" />
+		        <entry key="Eric" value="72.5" />
+		    </map>
+	    </property>
+	</bean>
 </beans>
