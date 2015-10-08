@@ -1,0 +1,10 @@
+test.collections
+test.collections.implementations.sets
+test.dates
+test.default_methods
+test.lambda
+test.method_references
+test.spring.beandefinition
+test.spring.di
+test.spring.instantiating
+test.spring.scope
