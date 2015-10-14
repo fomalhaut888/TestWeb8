@@ -13,7 +13,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * 			&nbsp;&nbsp;&nbsp;&nbsp;3.CopyOnWriteArraySet是線程安全的集合，而HashSet是非線程安全的。<br>
  * 			&nbsp;&nbsp;&nbsp;&nbsp;4.參考資料: <a href="http://www.cnblogs.com/skywang12345/p/3498497.html" target="_top">http://www.cnblogs.com/skywang12345/p/3498497.html</a><br>
  * @author SimonC
- *
+ * @since 2015-10-08
  */
 public class SetSample5 {
 

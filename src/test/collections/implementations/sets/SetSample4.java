@@ -9,7 +9,7 @@ import java.util.EnumSet;
  * 			&nbsp;&nbsp;&nbsp;&nbsp;1.EnumSet物件內原素存放的順序會依enum宣告的順序.<br>
  * 			&nbsp;&nbsp;&nbsp;&nbsp;2.EnumSet的range靜態方法的兩引數必須依照enum宣告的順序前及後, 否則會出現IllegalArgumentException例外.<br>
  * @author SimonC
- *
+ * @since 2015-10-08
  */
 public class SetSample4 {
 
