@@ -8,10 +8,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * 目標:<br>
  * 			&nbsp;&nbsp;&nbsp;&nbsp;CopyOnWriteArrayList的例子-多個線程同時操作並且遍歷集合list的範例.<br>
  * 結果:<br>
- * 			&nbsp;&nbsp;&nbsp;&nbsp;1.當list是CopyOnWriteArrayList物件時，程序能正常運行。<br>
- * 			&nbsp;&nbsp;&nbsp;&nbsp;2.当list是ArrayList物件時，程序會產生ConcurrentModificationException異常。<br>
- * 			&nbsp;&nbsp;&nbsp;&nbsp;3.CopyOnWriteArraySet是線程安全的集合，而ArrayList是非線程安全的。<br>
- * 			&nbsp;&nbsp;&nbsp;&nbsp;4.參考資料: <a href="http://www.cnblogs.com/skywang12345/p/3498483.html" target="_top">http://www.cnblogs.com/skywang12345/p/3498483.html</a><br>
+ * 			&nbsp;&nbsp;&nbsp;&nbsp;1.CopyOnWriteArrayList分類屬Special purpose實作。<br>
+ * 			&nbsp;&nbsp;&nbsp;&nbsp;2.當list是CopyOnWriteArrayList物件時，程序能正常運行。<br>
+ * 			&nbsp;&nbsp;&nbsp;&nbsp;3.當list是ArrayList物件時，程序會產生ConcurrentModificationException異常。<br>
+ * 			&nbsp;&nbsp;&nbsp;&nbsp;4.CopyOnWriteArraySet是線程安全的集合，而ArrayList是非線程安全的。<br>
+ * 			&nbsp;&nbsp;&nbsp;&nbsp;5.參考資料: <a href="http://www.cnblogs.com/skywang12345/p/3498483.html" target="_top">http://www.cnblogs.com/skywang12345/p/3498483.html</a><br>
  * @author SimonC
  * @since 2015-10-14
  */

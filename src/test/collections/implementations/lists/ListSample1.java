@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 目標:<br>
- * 			&nbsp;&nbsp;&nbsp;&nbsp;1.測試ArrayList及LinkedList在連結的首位插入元素的效能差異.<br>
+ * 			&nbsp;&nbsp;&nbsp;&nbsp;1.測試兩種general-purpose實作ArrayList及LinkedList在連結的首位插入元素的效能差異.<br>
  * 			&nbsp;&nbsp;&nbsp;&nbsp;2.比較方式: 預先在兩種List上建立1百萬個元素,
  *          然後使用新增插入操作在首位(index=0)插入1000個元素,比較插入這些元素所花的時間.<br>
  * 結果:<br>

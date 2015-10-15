@@ -8,6 +8,7 @@ import java.util.TreeSet;
 
 /**
  * 目標:<br>
+ * 			&nbsp;&nbsp;&nbsp;&nbsp;三種一般目的(General-purpose)的Set物件範例.<br>
  * 			&nbsp;&nbsp;&nbsp;&nbsp;將數個int值及String物件分別塞入HashSet, TreeSet, LinkedHashSet物件, <br>
  * 	        &nbsp;&nbsp;&nbsp;&nbsp;再將它從物件依序抓出, 看int值或String物件出來的排列順序為何.<br>
  * 結果:<br>

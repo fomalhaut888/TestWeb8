@@ -8,6 +8,7 @@ import java.util.Set;
  * 目標:<br>
  * 			&nbsp;&nbsp;&nbsp;&nbsp;EnumMap的例子.<br>
  * 結果:<br>
+ * 			&nbsp;&nbsp;&nbsp;&nbsp;1.EnumMap分類屬Special-purpose實作.<br>
  * 			&nbsp;&nbsp;&nbsp;&nbsp;1.EnumMap key值的順序會依enum宣告的順序.<br>
  * @author SimonC
  * @since 2015-10-14

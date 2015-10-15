@@ -8,9 +8,10 @@ import java.util.Map;
  * 目標:<br>
  * 			&nbsp;&nbsp;&nbsp;&nbsp;IdentityHashMap的例子.<br>
  * 結果:<br>
- * 			&nbsp;&nbsp;&nbsp;&nbsp;1.HashMap是key的值唯一; IdentityHashMap是key的物件唯一.<br>
- * 			&nbsp;&nbsp;&nbsp;&nbsp;2.HashMap判別key是否相等是以equals方法判別; IdentityHashMap則是以物件參照相等判別(==).<br>
- * 			&nbsp;&nbsp;&nbsp;&nbsp;3.IdentityHashMap通常用於序列化或deep-copying,具有物件唯一性.<br>
+ * 			&nbsp;&nbsp;&nbsp;&nbsp;1.IdentityHashMap分類屬Special-purpose實作.<br>
+ * 			&nbsp;&nbsp;&nbsp;&nbsp;2.HashMap是key的值唯一; IdentityHashMap是key的物件唯一.<br>
+ * 			&nbsp;&nbsp;&nbsp;&nbsp;3.HashMap判別key是否相等是以equals方法判別; IdentityHashMap則是以物件參照相等判別(==).<br>
+ * 			&nbsp;&nbsp;&nbsp;&nbsp;4.IdentityHashMap通常用於序列化或deep-copying,具有物件唯一性.<br>
  * @author SimonC
  * @since 2015-10-14
  */

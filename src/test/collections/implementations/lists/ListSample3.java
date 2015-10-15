@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 目標:<br>
- * 			&nbsp;&nbsp;&nbsp;&nbsp;1.測試ArrayList及LinkedList抓取不同位置元素的效能差異.<br>
+ * 			&nbsp;&nbsp;&nbsp;&nbsp;1.測試兩種general-purpose實作ArrayList及LinkedList抓取不同位置元素的效能差異.<br>
  * 			&nbsp;&nbsp;&nbsp;&nbsp;2.比較方式: 預先在兩種List上建立1百萬個元素,
  *          然後抓取固定1000個位置的元素並印出,比較抓取這些元素所花的時間.<br>
  * 結果:<br>
