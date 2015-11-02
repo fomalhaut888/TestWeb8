@@ -1,6 +1,8 @@
 test.collections
+test.collections.implementations.deques
 test.collections.implementations.lists
 test.collections.implementations.maps
+test.collections.implementations.queues
 test.collections.implementations.sets
 test.dates
 test.default_methods
