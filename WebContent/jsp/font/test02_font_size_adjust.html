@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> text-size-adjust </title>
+	<style type="text/css">
+		#div1{
+			font-size: 16pt;
+			font-family: "Arial Black";
+		}
+		#div2{
+			font-size: 16pt;
+			font-family: "Bodoni MT";
+		}
+		#div3{
+			font-size: 16pt;
+			font-family: "Niagara Solid";
+		}
+		#div11{
+			font-size: 16pt;
+			font-family: "Arial Black";
+			font-size-adjust: 0.52;
+		}
+		#div21{
+			font-size: 16pt;
+			font-family: "Bodoni MT";
+			font-size-adjust: 0.48;
+		}
+		#div31{
+			font-size: 16pt;
+			font-family: "Niagara Solid";
+			font-size-adjust: 1.22;
+		}
+	</style>
+</head>
+<body>
+<!-- 只有Firefox有效果(16/7/11) -->
+<div id="div1">Our domain is www.crazyit.org</div>
+<div id="div2">Our domain is www.crazyit.org</div>
+<div id="div3">Our domain is www.crazyit.org</div>
+<div id="div11">Our domain is www.crazyit.org</div>
+<div id="div21">Our domain is www.crazyit.org</div>
+<div id="div31">Our domain is www.crazyit.org</div>
+</body>
+</html>

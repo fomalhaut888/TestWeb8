@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 陰影 </title>
+	<style type="text/css">
+		span{
+			display: block;
+			padding: 8px;
+			font-size: xx-large;
+		}
+	</style>
+</head>
+<body>
+text-shadow:red 5px 5px 2px :
+<span style="text-shadow:red 5px 5px 2px"> 測試文字 </span>
+text-shadow:5px 5px 2px(省略陰影顏色) : <!-- Safari不會顯示陰影,其餘皆直接使用字體顏色作為陰影顏色(16/7/11) -->
+<span style="text-shadow:5px 5px 2px;color: blue;"> 測試文字 </span>
+text-shadow:-5px -5px 2px gray(向左上角投影) :
+<span style="text-shadow:-5px -5px 2px gray"> 測試文字 </span>
+text-shadow:-5px 5px 2px gray(向左下角投影) :
+<span style="text-shadow:-5px 5px 2px gray"> 測試文字 </span>
+text-shadow:5px -5px 2px gray(向右上角投影) :
+<span style="text-shadow:5px -5px 2px gray"> 測試文字 </span>
+text-shadow:5px 5px 2px gray(向右下角投影) :
+<span style="text-shadow:5px 5px 2px gray"> 測試文字 </span>
+text-shadow:15px 15px 2px gray(向右下角投影, 更大的偏移距離) :
+<span style="text-shadow:15px 15px 2px gray"> 測試文字 </span>
+text-shadow:5px 5px 10px gray(模糊半徑增加,模糊程度加深) :
+<span style="text-shadow:5px 5px 10px gray"> 測試文字 </span>
+<br/>
+text-shadow:5px 5px 2px #222,<br/>
+	30px 30px 2px #555,<br/>
+	50px 50px 2px #888(多個投影):
+<span style="text-shadow:5px 5px 2px #222,30px 30px 2px #555,50px 50px 2px #888"> 測試文字 </span>
+</body>
+</html>
