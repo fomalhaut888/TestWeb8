@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 文字相關屬性設定 </title>
+	<style type="text/css">
+	/* 為div元素增加邊框 */
+	div{
+		border:1px solid #000000;
+		height: 30px;
+		width: 200px;
+	}
+	</style>
+</head>
+<body>
+<!-- 縮排20pt -->
+text-indent:20pt <div style="text-indent:20pt"> 測試文字 </div>
+<!-- 縮排40pt -->
+text-indent:40pt <div style="text-indent:40pt"> 測試文字 </div>
+<!-- 置中對齊 -->
+text-align:center <div style="text-align:center"> 測試文字 </div>
+<!-- 靠右對齊 -->
+text-align:right <div style="text-align:right"> 測試文字 </div>
+<!-- 左右對齊 --><!-- 無效果 -->
+text-align:justify <div style="text-align:justify"> 測試文字 </div>
+<!-- 文字從右邊流入 -->
+direction:rtl <div style="direction:rtl"> 測試文字 </div>
+<!-- 文字從左邊流入 -->
+direction:ltr <div style="direction:ltr"> 測試文字 </div>
+<!-- 標點符號從右邊流入 -->
+direction:rtl <div style="direction:rtl"> ,.!_- </div>
+<!-- 標點符號從左邊流入 -->
+direction:ltr <div style="direction:ltr"> ,.!_- </div>
+<!-- 強制不換行,直到遇到br標籤 -->
+white-space:nowrap <div style="white-space:nowrap">
+	測試文字, 圖解網頁設計必學的9堂課, Java Web 開發技術詳解</div>
+<!-- 自動換行 -->
+white-space:normal <div style="white-space:normal">
+	測試文字, 圖解網頁設計必學的9堂課, Java Web 開發技術詳解</div>
+<!-- 當文字溢出時,只是簡單地裁切 --><!-- 必須配合overflow:hidden; white-space:nowrap; -->
+text-overflow:clip <div style="overflow:hidden; white-space:nowrap; 
+	text-overflow:clip;">測試文字測試文字測試文字測試文字測試文字測試文字</div>
+<!-- 當文字溢出時,裁切之後顯示裁切標籤 --><!-- 必須配合overflow:hidden; white-space:nowrap; -->
+text-overflow:ellipsis <div style="overflow:hidden; white-space:nowrap; 
+	text-overflow:ellipsis;">測試文字測試文字測試文字測試文字測試文字測試文字</div>
+</body>
+</html>
