@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 伺服器字體 </title>
+	<style type="text/css">
+	/* 瀏覽器支援狀況,參考: http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp */
+	/* 定義普通的伺服器字體  */
+	@font-face {
+		font-family: CrazyIt;
+		src: url("Delicious-Roman.otf") format("OpenType");
+	}
+	/* 定義粗體的伺服器字體  */
+	@font-face {
+		font-family: CrazyIt;
+		src: url("Delicious-Bold.otf") format("OpenType");
+		font-weight: bold;
+	}
+	/* 定義斜體的伺服器字體  */
+	@font-face {
+		font-family: CrazyIt;
+		src: url("Delicious-Italic.otf") format("OpenType");
+		font-style: italic;
+	}
+	/* 定義粗斜體的伺服器字體  */
+	@font-face {
+		font-family: CrazyIt;
+		src: url("Delicious-BoldItalic.otf") format("OpenType");
+		font-style: italic;
+		font-weight: bold;
+	}
+	</style>
+</head>
+<body>
+<div style="font-family:CrazyIt;font-size:30pt">
+Our domain is http://www.crazyit.org
+</div>
+<div style="font-family:CrazyIt;font-size:30pt;font-weight:bold">
+Our domain is http://www.crazyit.org
+</div>
+<div style="font-family:CrazyIt;font-size:30pt;font-style:italic;">
+Our domain is http://www.crazyit.org
+</div>
+<div style="font-family:CrazyIt;font-size:30pt;font-weight:bold;font-style:italic;">
+Our domain is http://www.crazyit.org
+</div>
+</body>
+</html>

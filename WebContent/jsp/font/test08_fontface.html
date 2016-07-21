@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 伺服器字體 </title>
+	<style type="text/css">
+	/* 定義伺服器字體,字體名為CrazyIt
+	伺服器字體對應的字體檔為Blazed.ttf */
+	/* IE出現錯誤: @font-face 的 OpenType 內嵌權限檢查失敗。權限必須可以安裝。 */
+	/* 瀏覽器支援狀況,參考: http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp */
+	@font-face {
+		font-family: CrazyIt;
+		src: url("Blazed.ttf") format("TrueType");
+	}
+	</style>
+</head>
+<body>
+<!-- 指定CrazyIt字體,這是伺服器字體 -->
+<div style="font-family:CrazyIt;font-size:36pt">
+Our domain is http://www.crazyit.org
+</div>
+</body>
+</html>

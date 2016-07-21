@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 優先使用用戶端字體 </title>
+	<style type="text/css">
+	/* 定義伺服器字體: CrazyIt
+	該字體優先使用用戶端字體: Goudy Stout
+	當用戶端字體不存在時,使用Blazed.ttf作為替代字體  */
+	/* 瀏覽器支援狀況,參考: http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp */
+	@font-face {
+		font-family: CrazyIt;
+		src: local("Arial2"), url("Blazed.ttf") format("TrueType");
+	}
+	</style>
+</head>
+<body>
+<div style="font-family:CrazyIt;font-size:30pt">
+Our domain is http://www.crazyit.org
+</div>
+</body>
+</html>
