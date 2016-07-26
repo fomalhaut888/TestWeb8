@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 背景相關屬性 </title>
+	<style type="text/css">
+	/* 為div元素增加邊框 */
+	div{
+		border:10px dotted #444;
+		padding: 12px;
+		height: 30px;
+		width: 200px;
+	}
+	</style>
+</head>
+<body>
+background-image:url(wjc.gif)
+<div style="background-image:url(wjc.gif);">測試文字</div>
+background-image:url(wjc.gif);background-clip:border-box;
+<div style="background-image:url(wjc.gif);background-clip:border-box">測試文字</div>
+background-image:url(wjc.gif);background-clip:no-clip;
+<div style="background-image:url(wjc.gif);background-clip:no-clip;">測試文字</div>
+background-image:url(wjc.gif);background-clip:padding-box;
+<div style="background-image:url(wjc.gif);background-clip:padding-box;">測試文字</div>
+background-image:url(wjc.gif);background-clip:content-box;
+<div style="background-image:url(wjc.gif);background-clip:content-box;">測試文字</div>
+</body>
+</html>

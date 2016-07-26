@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 背景相關屬性 </title>
+	<style type="text/css">
+	/* 為div元素增加邊框 */
+	div{
+		border:1px solid #000;
+		height: 50px;
+		width: 200px;
+	}
+	</style>
+</head>
+<body>
+<!-- 背景圖片從內容區開始覆蓋 -->
+background-image:url(wjc.gif);
+<div style="background-image:url(wjc.gif);"></div>
+background-image:url(wjc.gif);background-size:100% 80%;
+(背景圖片的寬度與元件寬度相同,高度為元件高度的80%)
+<div style="background-image:url(wjc.gif);
+	-webkit-background-size:100% 80%;background-size:100% 80%;"></div>
+background-image:url(wjc.gif);background-size:20% auto;
+(背景圖片的寬度與元件寬度20%,高度保持縱橫比例縮放)
+<div style="background-image:url(wjc.gif);
+	-webkit-background-size:20% auto;background-size:20% auto;"></div>
+background-image:url(wjc.gif);background-size:auto 50%;
+(背景圖片的寬度保持縱橫比例縮放,高度為元件寬度50%)
+<div style="background-image:url(wjc.gif);
+	-webkit-background-size:auto 50%;background-size:auto 50%;"></div>
+background-image:url(wjc.gif);background-size:60px 30px;
+(背景圖片的寬度為60px,高度為30px)
+<div style="background-image:url(wjc.gif);
+	-webkit-background-size:60px 30px;background-size:60px 30px;"></div>
+background-image:url(wjc.gif);background-size:40px auto;
+(背景圖片的寬度為40px,高度保持縱橫比例縮放)
+<div style="background-image:url(wjc.gif);
+	-webkit-background-size:40px auto;background-size:40px auto;"></div>
+background-image:url(wjc.gif);background-size:auto 20px;
+(背景圖片的寬度保持縱橫比例縮放,高度為20px)
+<div style="background-image:url(wjc.gif);
+	-webkit-background-size:auto 20px;background-size:auto 20px;"></div>
+</body>
+</html>

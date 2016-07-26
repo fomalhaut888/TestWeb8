@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 背景相關屬性 </title>
+	<style type="text/css">
+	/* 為div元素增加邊框 */
+	div#div1{
+		border:1px solid #000;
+		height: 160px;
+		width: 500px;
+		/* 依序指定了3個背景圖片 */
+		background-image: url(snow.gif), url(face.gif), url(sky.gif);
+		/* 依序指定了3個背景圖片的重複方式: 縱向重複,橫向重複, 兩個方向重複 */
+		background-repeat: repeat-y, repeat-x, repeat;
+		/* 依序指定了3個背景圖片的位置 */
+		background-position: center top, left center, left top;
+	}
+	</style>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>
