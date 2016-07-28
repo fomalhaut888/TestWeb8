@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 圓角邊框 </title>
+	<style type="text/css">
+	/* 設定div元素的寬度和高度 */
+	div{
+		width: 300px;
+		height: 60px;
+	}
+	</style>
+</head>
+<body>
+<div style="border:3px solid black;border-radius:20px;">
+半徑為20px的圓角邊框</div>
+<div style="border:3px dotted black;border-radius:20px;">
+半徑為20px的圓角邊框</div>
+<div style="background-color:#aaa;border-radius:20px;">
+半徑為20px的圓角邊框(不顯示邊框)</div>
+<div style="border:3px solid black;border-radius:16px 40px;">
+半徑為16px 40px的圓角邊框</div>
+<div style="border:3px solid black;border-radius:10px 20px 40px;">
+半徑為10px 20px 40px的圓角邊框</div>
+<div style="border:3px solid black;border-radius:10px 20px 30px 40px;">
+半徑為10px 20px 30px 40px的圓角邊框</div>
+<div style="border:3px solid black;
+	border-top-left-radius:30px;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:40px;
+	border-bottom-left-radius:10px;">
+分別指定4個角的半徑</div>
+</body>
+</html>
