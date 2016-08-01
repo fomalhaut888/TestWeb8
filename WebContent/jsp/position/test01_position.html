@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 位置相關屬性測試 </title>
+</head>
+<body>
+Struts<br/>
+Hibernate<br/>
+Spring<br/>
+jBPM<br/>
+<!-- 下面的<div.../>元素定位時使用了absolute值,因此不會受上面文字的影響
+	它將直接基於頁面定位 -->
+<div id="Layer1" style="position:absolute; 
+	left:40px; top:20px; width:180px; height:88px;
+	z-index:2; background-color: #ccc;">
+Layer1,使用position屬性值為absolute,該Layer將完全漂浮在頁面之上,
+不受其他物件位置影響. z-index:2
+</div>
+<!-- 下面的<div.../>元素定位時使用了relative值,因此它將基於上面
+	最後一行文字進行定位 -->
+<div id="Layer2" style="position:relative; 
+	left:50px; top:10px; width:200px; height:88px;
+	z-index:3; background-color: #999;">
+Layer2,使用position屬性值為relative,該Layer將漂浮在頁面之上,
+但它將基於上面最後一行文字進行定位. z-index:3
+</div>
+<div style="position:absolute; left:260px; top:80px; width: 250px;
+	height: 200px; border:black solid 1px;">
+<!-- 下面的Layer3和Layer4兩個<div.../>
+	雖然設定了top一個為40px, 另一個為80px,
+	但不會有任何作用,因為其position為static -->	
+	<div id="Layer3" style="position: static; left; 100px; top: 80px;
+		width:80px; height: 88px; z-index:1; background-color: #666;">
+		position:static	
+	</div>
+	<div id="Layer4" style="position: static; left; 100px; top: 80px;
+		width:80px; height: 88px; z-index:1; background-color: #999;">
+		position:static	
+	</div>
+</div>
+</body>
+</html>
