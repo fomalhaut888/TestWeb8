@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> overflow屬性 </title>
+	<style type="text/css">
+		div {
+			width: 300px;
+			height: 70px;
+			border:1px solid black;
+			white-space: nowrap;/* 強制不換行,直到遇到br標籤 */
+			margin: 15px;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<h3> 不設定overflow屬性 </h3>
+	測試文字測試文字測試文字測試文字測試文字測試文字
+</div>
+<div style="overflow:hidden;">
+	<h3> overflow:hidden; </h3>
+	測試文字測試文字測試文字測試文字測試文字測試文字
+</div>
+<div style="overflow:auto;">
+	<h3> overflow:auto; </h3>
+	測試文字測試文字測試文字測試文字測試文字測試文字
+</div>
+<div style="overflow-x:hidden;">
+	<h3> overflow-x:hidden; </h3>
+	測試文字測試文字測試文字測試文字測試文字測試文字
+</div>
+<div style="overflow-y:hidden;">
+	<h3> overflow-y:hidden; </h3>
+	測試文字測試文字測試文字測試文字測試文字測試文字
+</div>
+</body>
+</html>

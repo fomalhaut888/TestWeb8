@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 多欄佈局 </title>
+	<style type="text/css">
+		body{
+			margin: 0px;
+		}
+		div#container {
+			width: 960px;
+			height: auto;
+		}
+		div>div {
+			border: 1px solid #aaf;
+			/* 設定HTML元件的width屬性包括邊框 */
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			border-radius: 12px 12px 0px 0px;
+			background-color: #ffc;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+<div id="container">
+	<!-- float:left;浮向左邊 -->
+	<div style="float:left;width:220px">
+		<h2> 瘋狂軟體開班資訊 </h2>
+		<ul>
+			<li>2011年11月10日&nbsp;已滿已開班</li>
+			<li>2011年12月02日&nbsp;爆滿已開班</li>
+			<li>2012年02月08日&nbsp;已滿已開班</li>
+		</ul>
+	</div>
+	<!-- float:left;浮向左邊 -->
+	<div style="float:left;width:500px">
+		<h2> 瘋狂軟體介紹 </h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;瘋狂Java品牌專注高級軟體程式設計，以「十年磨一劍」的心態打造全國最強（不是之一）瘋狂Java學習體系：包括瘋狂Java體系原創書籍，瘋狂Java學習路線圖，這些深厚的知識沉澱已被大量高校、培訓機構奉為經典。<br/> 
+		&nbsp;&nbsp;&nbsp;&nbsp;瘋狂Java懷抱「軟體強國」的理想，立志以務實的技術來改變中國的軟體教育。經過八年沉澱，瘋狂Java強勢回歸。瘋狂Java創始人李剛，攜瘋狂Java精英講師團隊肖文吉、李韓飛、黃勇、陳輝等老師將帶給廣大學習者「非一般」的瘋狂。
+	</div>
+	<!-- float:left;浮向左邊 -->
+	<div style="float:left;width:240px">
+		<h2> 公司動態 </h2>
+		<ul>
+			<li>《圖解網頁設計必學的9堂課》(第2版)上市</li>
+			<li>泰豪電網軟體公司來校召開現場招聘會</li>
+			<li>瘋狂學子赴武漢光穀軟體園區入職</li>
+			<li>新華南方來校現場招聘</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
