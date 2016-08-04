@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 導覽選單 </title>
+	<style type="text/css">
+		body>div {
+			text-align: center;
+			margin: auto;
+		}
+		div>div {
+			/* 設定為inline-block 盒子模型,保證一行顯示 */
+			display: inline-block;
+			border: 1px solid black;
+		}
+		a {
+			text-decoration:none;
+			/* 設定為block盒子模型,允許設定高度,寬度 */
+			display: block;
+			width: 120px;
+			padding: 10px;
+			/* 設定預設背景顏色 */
+			background-color: #eee;
+		}
+		a:hover {
+			/* 設定滑鼠懸停時的背景顏色 */
+			background-color: #aaa;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<div><a href="http://www.crazyit.org">瘋狂Java聯盟</a></div>
+	<div><a href="http://www.fkjava.org">瘋狂軟體教育</a></div>
+	<div><a href="http://www.fkjava.org/companyInfo.html">關於我們</a></div>
+	<div><a href="http://www.crazyit.org">瘋狂成員</a></div>
+</div>
+</body>
+</html>

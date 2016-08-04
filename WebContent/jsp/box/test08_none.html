@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 隱藏元素 </title>
+	<style type="text/css">
+	/* 設定div元素的寬度,高度,背景顏色和邊框 */
+		div,span {
+			width: 300px;
+			height: 40px;
+			background-color: #ddd;
+			border:2px solid black;
+		}
+	</style>
+</head>
+<body>
+<input type="button" value=" 隱藏 " onclick="document.getElementById('test1').style.display='none';" />
+<input type="button" value=" 顯示 " onclick="document.getElementById('test1').style.display='';" />
+<div id="test1">
+使用display控制物件的顯示和隱藏
+</div>
+<input type="button" value=" 隱藏 " onclick="document.getElementById('test2').style.visibility='hidden';" />
+<input type="button" value=" 顯示 " onclick="document.getElementById('test2').style.visibility='visible';" />
+<div id="test2">
+使用visibility控制物件的顯示和隱藏
+</div>
+<hr/>
+</body>
+</html>
