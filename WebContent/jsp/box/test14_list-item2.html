@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 多層清單 </title>
+	<style type="text/css">
+		body>div{
+			display: list-item;
+			list-style-type: disc;
+			margin-left: 20px;
+		}
+		div>div{
+			display: list-item;
+			list-style-type: square;
+			margin-left: 40px;
+		}
+	</style>
+</head>
+<body>
+<div id="div1">
+	網頁設計系列書籍
+	<div>圖解網頁設計必學的9堂課</div>
+	<div>CSS3網頁設計實作應用</div>
+	<div>一定要學會的HTML5</div>
+</div>
+<div id="div2">
+	瘋狂JAVA相關
+	<div>瘋狂JAVA聯盟</div>
+	<div>瘋狂軟體教育</div>
+	<div>瘋狂JAVA實訓營</div>
+</div>
+</body>
+</html>

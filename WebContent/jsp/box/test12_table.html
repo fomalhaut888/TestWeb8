@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 表格相關的盒子模型 </title>
+	<style type="text/css">
+		div > div {
+			display: table-row;
+			padding: 10px;
+		}
+		div > div > div{
+			display: table-cell;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+<div style="display: table; width: 400px;">
+	<div style="display:table-caption;">網頁設計系列書籍</div>
+	<div>
+		<div>圖解網頁設計必學的9堂課</div>
+		<div>CSS3網頁設計實作應用</div>
+	</div>
+	<div>
+		<div>網頁設計應用集</div>
+		<div>Java Web 開發技術詳解</div>
+	</div>
+</div>
+</body>
+</html>
