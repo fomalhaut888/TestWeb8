@@ -3,7 +3,7 @@ package new7;
 /**
  * Samples for Binary Literals
  * @author SimonC
- *
+ * @see https://docs.oracle.com/javase/8/docs/technotes/guides/language/binary-literals.html
  */
 public class BinaryLiteral {
 
