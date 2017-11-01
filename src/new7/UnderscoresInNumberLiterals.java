@@ -1,7 +1,7 @@
 package new7;
 
 /**
- * Samples for Underscores in Numeric Literals
+ * JDK 7 New: Samples for Underscores in Numeric Literals
  * @author SimonC
  * @see https://docs.oracle.com/javase/8/docs/technotes/guides/language/underscores-literals.html
  */
