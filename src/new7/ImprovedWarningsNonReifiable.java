@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * JDK 7 New: Samples for Improved Compiler Warnings and Errors When Using Non-Reifiable Formal Parameters with Varargs Methods
+ * @author SimonC
+ * @see https://docs.oracle.com/javase/8/docs/technotes/guides/language/non-reifiable-varargs.html
+ */
 public class ImprovedWarningsNonReifiable {
 
 	public static void main(String[] args) {

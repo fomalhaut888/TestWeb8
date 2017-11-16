@@ -3,6 +3,11 @@ package new5;
 import java.text.MessageFormat;
 import java.util.Date;
 
+/**
+ * JDK 5 New: Samples for Varargs
+ * @author SimonC
+ * @see https://docs.oracle.com/javase/8/docs/technotes/guides/language/varargs.html
+ */
 public class Varargs {
 
 	public static void main(String[] args) {

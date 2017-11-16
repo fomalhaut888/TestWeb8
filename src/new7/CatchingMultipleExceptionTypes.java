@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 /**
- * JDK 7 New: Catching Multiple Exception Types and Rethrowing Exceptions with Improved Type Checking
+ * JDK 7 New: Samples for Catching Multiple Exception Types and Rethrowing Exceptions with Improved Type Checking
  * @author SimonC
  * @see https://docs.oracle.com/javase/8/docs/technotes/guides/language/catch-multiple.html
  */
