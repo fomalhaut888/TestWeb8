@@ -30,6 +30,41 @@ public class Annotations {
 					}
 			}
 			System.out.printf("Passed: %d, Failed %d%n", passed, failed);
+			System.out.println();
+			
+			//5-1. RetentionPolicy: the method marked as RetentionPolicy.CLASS(default) cannot be caught at the runtime.
+			System.out.println("RequestForEnhancement method: ");
+			for (Method m : Class.forName(testClassName).getMethods()) {
+					if (m.isAnnotationPresent(RequestForEnhancement.class)) {
+							System.out.println(m.getName());
+					}
+			}
+			System.out.println();
+			
+			//5-2. RetentionPolicy: the method marked as RetentionPolicy.RUNTIME will be caught at the runtime.
+			System.out.println("MyAnnotation method: ");
+			for (Method m : Class.forName(testClassName).getMethods()) {
+					if (m.isAnnotationPresent(MyAnnotation.class)) {
+							System.out.println(m.getName());
+					}
+			}
+			System.out.println();
+			
+			//5-3. Annotated Class: the class marked as RetentionPolicy.RUNTIME will be caught at the runtime.
+			System.out.println("MyAnnotation class: ");
+			String testMyAnnotationClassName = "new5.annotations.Annotations$TestMyAnnotationClass";
+			if(Class.forName(testMyAnnotationClassName).isAnnotationPresent(MyAnnotation.class)){
+					System.out.println(Class.forName(testMyAnnotationClassName).getName());
+			}
+			System.out.println();
+			
+			//5-4. Annotated Class: the class marked as RetentionPolicy.CLASS cannot be caught at the runtime.
+			System.out.println("Preliminary class: ");
+			String timeTravelClassName = "new5.annotations.Annotations$TimeTravel";
+			if(Class.forName(timeTravelClassName).isAnnotationPresent(Preliminary.class)){
+					System.out.println(Class.forName(timeTravelClassName).getName());
+			}
+			System.out.println();
 	}
 
 	//1. Use my Annotation.
@@ -91,4 +126,18 @@ public class Annotations {
     }
     
     public static void m8() { }
+    
+    //@Test //Compile Error if marked as @Test: The annotation @Test is disallowed for this location
+    public static class TestClass {
+    	
+    }
+    
+    @MyAnnotation("SimonC")
+    public void testMyAnnotation(){
+    }
+    
+    @MyAnnotation("SimonC")
+    public static class TestMyAnnotationClass{
+    		
+    }
 }
