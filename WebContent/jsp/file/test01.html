@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="author" content="Yeeku.H.Lee(CrazyIt.org)" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 檔案上傳區域 </title>
+</head>
+<body>
+瀏覽圖片：<input id="images" type="file" multiple accept="image/*"/>
+<input type="button" value="顯示檔案" onclick="showDetails();"/>
+<script type="text/javascript">
+	var showDetails = function(){
+		var imageEle = document.getElementById("images");
+		// 取得檔案上傳區域內輸入的多個檔案
+		var fileList = imageEle.files;
+		// 走訪每個檔案
+		for(var i = 0 ; i < fileList.length ; i ++){
+			var file = fileList[i];
+			div = document.createElement("div");
+			// 依序讀取每個檔案的檔案名稱、檔案類型、檔案大小
+			div.innerHTML = "第" + (i + 1) + "個檔案的檔案名稱是：" + file.name
+				+ "，該檔案類型是：" + file.type
+				+ "，該檔案大小為：" + file.size;
+			// 把div元素添加到頁面中
+			document.body.appendChild(div);
+		}
+	}
+</script>
+</body>
+</html>

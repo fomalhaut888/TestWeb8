@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="author" content="Yeeku.H.Lee(CrazyIt.org)" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> 檔案上傳區 </title>
+</head>
+<body>
+瀏覽檔案：<input id="file1" type="file"/><br/>
+<div id="result"></div>
+<input type="button" value="讀取文字檔案" onclick="readText();"/><br/>
+<input type="button" value="讀取二進位檔案" onclick="readBinary();"/><br/>
+<input type="button" value="以DataURL方式讀取" onclick="readURL();"/><br/>
+<script type="text/javascript">
+	var reader = null;
+	//如果瀏覽器支援FileReader物件
+	if(FileReader){
+		reader = new FileReader();
+		// 如果瀏覽器不支援FileReader物件，則彈出提示資訊
+	}else{
+		alert("瀏覽器暫不支援FileReader");
+	}
+	var readText = function(){
+		// 透過正則運算式驗證該檔案是否為文字檔案
+		// 如果使用者選擇的第一個檔案是文字檔案
+		alert(document.getElementById("file1").files[0].type);
+		if(/text\/\w+/.test(document.getElementById("file1").files[0].type)){
+			// 以文字檔案的方式讀取使用者選擇的第一個檔案
+			reader.readAsText(document.getElementById("file1").files[0] , "utf-8");
+			// 當reader讀取資料完成時將會觸發該函數
+			reader.onload = function(){
+				document.getElementById("result").innerHTML = reader.result;
+			};
+		}else{
+			alert("你選擇的檔案不是文字檔案！");
+		}
+	}
+	var readBinary = function(){
+		// 以二進制串流的方式讀取使用者選擇的第一個檔案
+		reader.readAsBinaryString(document.getElementById("file1").files[0]);
+		// 當reader讀取資料完成時將會觸發該函數
+		reader.onload = function(){
+			document.getElementById("result").innerHTML = reader.result;
+		};
+	}
+	var readURL = function(){
+		// 以DataURL的方式讀取使用者選擇的第一個檔案
+		reader.readAsDataURL(document.getElementById("file1").files[0]);
+		// 當reader讀取資料完成時將會觸發該函數
+		reader.onload = function(){
+			document.getElementById("result").innerHTML = reader.result;
+		};
+	}
+</script>
+</body>
+</html>
