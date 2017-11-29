@@ -1,4 +1,4 @@
-package new8;
+package new8.annotations;
 
 import org.checkerframework.checker.interning.qual.Interned;
 import org.checkerframework.checker.nullness.qual.NonNull;
