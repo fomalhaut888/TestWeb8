@@ -6,6 +6,9 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 //Ideal Use Case for Lambda Expressions
 public class LambdaSample {
@@ -17,7 +20,8 @@ public class LambdaSample {
 								p.printPerson();
 						}
 				}
-		}
+		}//This approach can potentially make your application brittle, which is the likelihood of an application not working 
+		//    because of the introduction of updates (such as newer data types).
 		
 		//Approach 2: Create More Generalized Search Methods
 		public static void printPersonsWithinAgeRange(List<Person> roster, int low, int high){
@@ -26,7 +30,8 @@ public class LambdaSample {
 								p.printPerson();
 						}
 				}
-		}
+		}//What if you want to print members of a specified sex, or a combination of a specified gender and age range? 
+		//    What if you decide to change the Person class and add other attributes such as relationship status or geographical location?
 		
 		//Approach 3: Specify Search Criteria Code in a Local Class
 		public static void printPersons(List<Person> roster, CheckPerson tester){
@@ -38,18 +43,19 @@ public class LambdaSample {
 		}
 		
 		//Approach 6: Use Standard Functional Interfaces(with GENERIC) with Lambda Expressions
-		public static void printPersonsWithPredicate(List<Person> roster, Predicate<Person> tester){
+		public static void printPersonsWithPredicate(List<Person> roster, Predicate<Person> tester){//java.util.function.Predicate
 				for(Person p: roster){
 						if(tester.test(p)){
 								p.printPerson();
 						}
 				}
-		}
+		}//The method is so simple that it might not be worth it to define one in your application. 
+		//    Consequently, the JDK defines several standard functional interfaces, which you can find in the PACKAGE java.util.function.
 		
 		//Approach 7: Use Lambda Expressions Throughout Your Application
 		public static void processPersons(List<Person> roster, Predicate<Person> tester,
-				Consumer<Person> block){
-				for(Person p: roster){
+				Consumer<Person> block){//In this case, you need a functional interface that contains an abstract method that can take one argument of type Person and returns void.
+				for(Person p: roster){//java.util.function.Consumer. The Consumer<T> interface contains the method void accept(T t), which has these characteristics.
 						if(tester.test(p)){
 								block.accept(p);
 						}
@@ -58,8 +64,8 @@ public class LambdaSample {
 		
 		//~Approach 7
 		public static void processPersonWithFunction(List<Person> roster, Predicate<Person> tester,
-				Function<Person, String> mapper, Consumer<String> block){
-				for(Person p: roster){
+				Function<Person, String> mapper, Consumer<String> block){//In this case, you need a functional interface that contains an abstract method that returns a value.
+				for(Person p: roster){//java.util.function.Function. The following method retrieves the data specified by the parameter mapper, and then performs an action on it specified by the parameter block
 						if(tester.test(p)){
 								String data = mapper.apply(p);
 								block.accept(data);
@@ -69,8 +75,8 @@ public class LambdaSample {
 		
 		//Approach 8 Use Generics More Extensively
 		public static <X, Y> void processElements(Iterable<X> source, Predicate<X> tester,
-				Function<X, Y> mapper, Consumer<Y> block){
-				for(X p: source){
+				Function<X, Y> mapper, Consumer<Y> block){//The following is a generic version of it that accepts, as a parameter, a collection that contains elements of any data type
+				for(X p: source){//java.lang.Iterable
 						if(tester.test(p)){
 								Y data = mapper.apply(p);
 								block.accept(data);
@@ -82,9 +88,19 @@ public class LambdaSample {
 				List<Person> roster = Person.getTestData();
 				
 				//~Approach3
-				printPersons(roster, new CheckPersonEligibleForSelectiveService());
+				System.out.println("$$$$$$$$$$ Approach3 starts");
+				System.out.println();
+				
+				printPersons(roster, new CheckPersonEligibleForSelectiveService());//use a concrete class that implements the interface of the second parameter.
+				
+				System.out.println("^^^^^^^^^^ Approach3 ends");
+				System.out.println();
+				System.out.println();
 				
 				//Approach 4: Specify Search Criteria Code in an Anonymous Class
+				System.out.println("$$$$$$$$$$ Approach4 starts");
+				System.out.println();
+				
 				printPersons(roster, new CheckPerson(){
 						@Override
 						public boolean test(Person p) {
@@ -93,40 +109,97 @@ public class LambdaSample {
 						}
 				});
 				
+				System.out.println("^^^^^^^^^^ Approach4 ends");
+				System.out.println();
+				System.out.println();
+				
 				//Approach 5: Specify Search Criteria Code with a Lambda Expression
+				System.out.println("$$$$$$$$$$ Approach5 starts");
+				System.out.println();
+				
 				printPersons(roster, 
 						(Person p) -> p.getGender() == Person.Sex.MALE  
 								&& p.getAge() >= 18 
-								&& p.getAge() < 25);
+								&& p.getAge() < 25);//Only for a functional interface that is any interface that contains only one ABSTRACT method. 
+				//    (A functional interface may contain one or more default methods or static methods.) 
+				
+				System.out.println("^^^^^^^^^^ Approach5 ends");
+				System.out.println();
+				System.out.println();
 				
 				//~Approach 6
+				System.out.println("$$$$$$$$$$ Approach6 starts");
+				System.out.println();
+				
 				printPersonsWithPredicate(roster, 
 						p -> p.getGender() == Person.Sex.MALE  
 								&& p.getAge() >= 18 
-								&& p.getAge() < 45);
+								&& p.getAge() < 50);//omit the class name when declaring p.
+				
+				System.out.println("^^^^^^^^^^ Approach6 ends");
+				System.out.println();
+				System.out.println();
 				
 				//~Approach 7
+				System.out.println("$$$$$$$$$$ Approach7 starts");
+				System.out.println();
+				
 				processPersons(roster,
 						p -> p.getGender() == Person.Sex.MALE  
 						&& p.getAge() >= 18 
-						&& p.getAge() < 45,
+						&& p.getAge() < 50,
 						p -> p.printPerson());
+				
+				System.out.println("//////////");
+				System.out.println();
+				
+				processPersons(roster,
+						p -> p.getGender() == Person.Sex.MALE  
+						&& p.getAge() >= 18 
+						&& p.getAge() < 50,
+						p -> p.printPerson2());//change another method to print results.
+				
+				System.out.println("//////////");
+				System.out.println();
 				
 				//~Approach 7
 				processPersonWithFunction(roster,
 						p -> p.getGender() == Person.Sex.MALE  
 						&& p.getAge() >= 18 
-						&& p.getAge() < 45,
+						&& p.getAge() < 50,
 						p -> p.getEmailAddress(),
 						email -> System.out.println("email:" + email));
 				
+				System.out.println();
+				System.out.println("^^^^^^^^^^ Approach7 ends");
+				System.out.println();
+				System.out.println();
+				
 				//~Approach 8
-				processElements(roster,
+				System.out.println("$$$$$$$$$$ Approach8 starts");
+				System.out.println();
+				
+				processElements(roster,//more generic parameter
 						p -> p.getGender() == Person.Sex.MALE  
 						&& p.getAge() >= 18 
-						&& p.getAge() < 45,
+						&& p.getAge() < 50,
 						p -> p.getEmailAddress(),
 						email -> System.out.println("email:" + email));
+				
+				System.out.println();
+				System.out.println("^^^^^^^^^^ Approach8 ends");
+				System.out.println();
+				System.out.println();
+				
+				//1.Obtains a SOURCE of objects from the collection source. In this example, 
+				//    it obtains a source of Person objects from the collection roster. 
+				//    Notice that the collection roster, which is a collection of type List, is also an object of type Iterable.
+				//2. FILTERS objects that match the Predicate object tester. In this example, 
+				//    the Predicate object is a lambda expression that specifies which members would be eligible for Selective Service.
+				//3. Maps each filtered object to a VALUE as specified by the Function object mapper. In this example, 
+				//    the Function object is a lambda expression that returns the e-mail address of a member.
+				//4. Performs an action on EACH mapped object as specified by the Consumer object block. In this example, 
+				//    the Consumer object is a lambda expression that prints a string, which is the e-mail address returned by the Function object.
 				
 				//Approach 9: Use Aggregate Operations That Accept Lambda Expressions as Parameters
 				//The operations filter, map, and forEach are aggregate operations.
@@ -138,29 +211,29 @@ public class LambdaSample {
 				//A pipeline is a sequence of stream operations, which in this example is filter- map-forEach.
 				//aggregate operations typically accept lambda expressions as parameters
 				//Aggregate Operations lesson: see http://docs.oracle.com/javase/tutorial/collections/streams/index.html
+				System.out.println("$$$$$$$$$$ Approach9 starts");
+				System.out.println();
+				
 				roster.stream()
 						.filter(
 								p -> p.getGender() == Person.Sex.MALE  
 								&& p.getAge() >= 18 
-								&& p.getAge() < 45)
+								&& p.getAge() < 50)
 						.map(p -> p.getEmailAddress())
 						.forEach(email -> System.out.println("email:" + email));
+				
+				System.out.println();
+				System.out.println("^^^^^^^^^^ Approach9 ends");
+				System.out.println();
+				System.out.println();
+				
+				//The aggregate operation:
+				//processElements Action: Aggregate Operation
+				//Obtain a source of objects: Stream<E> stream()
+				//Filter objects that match a Predicate object: Stream<T> filter(Predicate<? super T> predicate)
+				//Map objects to another value as specified by a Function object: <R> Stream<R> map(Function<? super T,? extends R> mapper)
+				//Perform an action as specified by a Consumer object: void forEach(Consumer<? super T> action)
 		}
-}
-
-//~Approach 7
-interface Function<T, R>{//any attribute given dynamically
-		R apply(T t);
-}
-
-//~Approach 7
-interface Consumer<T>{
-		void accept(T t);
-}
-
-//~Approach 6
-interface Predicate<T>{
-		boolean test(T t);
 }
 
 //~Approach 3
@@ -220,6 +293,16 @@ class Person{
 				System.out.println();
 		}
 		
+		public void printPerson2(){
+				System.out.println("********** " + name);
+				System.out.println(">>> Birthday: " + birthday.format(DateTimeFormatter.ISO_LOCAL_DATE));
+				System.out.println(">>> Gender: " + gender);
+				System.out.println(">>> Email: " + emailAddress);
+				System.out.println(">>> Age: " + getAge());
+				System.out.println();
+				System.out.println();
+		}
+		
 		public static List<Person> getTestData() {
 				List<Person> list = new ArrayList<Person>();
 				//1
@@ -257,7 +340,7 @@ class Person{
 				//5
 				p = new Person();
 				p.setName("余大");
-				p.setBirthday(LocalDate.of(1993, Month.FEBRUARY, 14));
+				p.setBirthday(LocalDate.of(1997, Month.FEBRUARY, 14));
 				p.setGender(Sex.MALE);
 				p.setEmailAddress("mail5@leosys.com");
 				list.add(p);
