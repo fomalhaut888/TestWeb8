@@ -18,14 +18,17 @@ public class LambdaTargetTypingSample {
 				//		Cast expressions
 				//****************************************
 				//1. Variable declarations
+				//invoke1(s -> System.out.println(s));//Compiler error because of two overloading methods with a paremeter of a funtional interface.
 				invoke1((String s) -> System.out.println(s));
+				//invoke1((Integer i) -> System.out.println(i));//Compiler error, autoboxing cannot be used in lambda declaration.
+				invoke1((int i) -> System.out.println(i));
 				invoke2((Integer c) -> System.out.println(c));
 				invoke2((String d) -> System.out.println(d));
 				//2.Method or constructor arguments
 				invoke3((h, b) -> System.out.println(h + ":" + b), "May", "18");
 				invoke3((h) -> System.out.println(h + ": "), "Kevin", "22");
 				//3.Return statements
-				invoke4(() -> "null");
+				invoke4(() -> "X");
 				invoke4(() -> 8);
 				//...
 		}
@@ -37,7 +40,9 @@ public class LambdaTargetTypingSample {
 		}
 		
 		public static void invoke1(B b){
+		//public static void invoke1(String s) {
 				b.methodB(10);
+				//System.out.println(s);
 		}
 		
 		private interface A{
@@ -101,6 +106,6 @@ public class LambdaTargetTypingSample {
 		}
 		
 		private interface H{
-			public int methodH();
-	}
+				public int methodH();
+		}
 }

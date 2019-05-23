@@ -24,10 +24,10 @@ public class MethodReferencesSample {
 			
 			//~ Traditional inner class
 			class PersonAgeComparator implements Comparator<Person>{
-				@Override
-				public int compare(Person a, Person b) {
-						return a.getBirthday().compareTo(b.getBirthday());
-				}
+					@Override
+					public int compare(Person a, Person b) {
+							return a.getBirthday().compareTo(b.getBirthday());
+					}
 			}
 			
 			//1. Traditional inner class
@@ -43,7 +43,7 @@ public class MethodReferencesSample {
 					(a, b) ->Person.compareByAge(a, b)
 			);*/
 			//4. Method reference instead of lambda expression.
-			Arrays.sort(rosterAsArray, 	Person::compareByAge);
+			Arrays.sort(rosterAsArray, Person::compareByAge);
 			//After sorting
 			System.out.println("After sorting");
 			for(Person p: rosterAsArray){
@@ -65,11 +65,14 @@ public class MethodReferencesSample {
 				    }
 			}
 			ComparisonProvider myComparisonProvider = new ComparisonProvider();
-			Arrays.sort(rosterAsArray, 	myComparisonProvider::compareByName );
+			//Arrays.sort(rosterAsArray, (a, b) -> myComparisonProvider.compareByName(a, b));//myComparisonProvider must be final.
+			Arrays.sort(rosterAsArray, 	myComparisonProvider::compareByName );//why not compiler error if not final?
+			//myComparisonProvider = new ComparisonProvider();//this line added to test that myComparisonProvider must be final.
 			System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$After sorting by name");
 			for(Person p: rosterAsArray){
 					p.printPerson();
 			}
+			//Arrays.sort(rosterAsArray, (a, b) -> myComparisonProvider.compareByAge(a, b) );
 			Arrays.sort(rosterAsArray, 	myComparisonProvider::compareByAge );
 			System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$After sorting by age");
 			for(Person p: rosterAsArray){
@@ -79,6 +82,7 @@ public class MethodReferencesSample {
 			//5-3 Reference to an Instance Method of an Arbitrary Object of a Particular Type
 			String[] stringArray = { "Barbara", "James", "Mary", "John",
 				    "Patricia", "Robert", "Michael", "Linda" };
+			//Arrays.sort(stringArray, (a, b) -> a.compareToIgnoreCase(b));
 			Arrays.sort(stringArray, String::compareToIgnoreCase);
 			System.out.println("#####################After sorting by string values:");
 			for(String s: stringArray){
@@ -88,8 +92,6 @@ public class MethodReferencesSample {
 			System.out.println();
 			
 			//5-4 Reference to a Constructor
-			//The functional interface Supplier contains one method get 
-			//		that takes no arguments and returns an object.
 			//5-4-1 Lambda expression
 			//List<Person> rosterListLambda = transferElements(roster, () -> new ArrayList<>());
 			//5-4-2 Constructor reference instead of lambda expression
@@ -104,8 +106,7 @@ public class MethodReferencesSample {
 	
 	//5-4 Reference to a Constructor
 	public static <T, SOURCE extends Collection<T>, DEST extends Collection<T>> 
-			DEST transferElements(SOURCE sourceCollection, Supplier<DEST> collectionFactory){
-			
+			DEST transferElements(SOURCE sourceCollection, Supplier<DEST> collectionFactory){//The functional interface java.util.function.Supplier contains one method get that takes no arguments and returns an object.
 			DEST result = collectionFactory.get();
 			for(T t: sourceCollection){
 					result.add(t);

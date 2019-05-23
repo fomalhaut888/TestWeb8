@@ -2,8 +2,8 @@ package test.default_methods;
 
 public interface Card extends Comparable<Card> {
 		public enum Suit{
-				DIAMONDS (1, "Diamonds"),
-				CLUBS (2, "Clubs"),
+				CLUBS (1, "Clubs"),
+				DIAMONDS (2, "Diamonds"),
 				HEARTS(3, "Hearts"),
 				SPADES(4, "Spades");
 				

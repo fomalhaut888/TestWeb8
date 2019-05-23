@@ -32,11 +32,14 @@ public class StandardDeck implements Deck {
 	public static void main(String args[]){
 			Deck myDeck = new StandardDeck();
 			myDeck.shuffle();
+			System.out.println(myDeck.deckToString());
+			System.out.println();
+			//1. a class implement java.util.Comparator<T> traditionally
 			//myDeck.sort(new SortByRankThenSuit());
-			//compare with one criterium only
-			//myDeck.sort((firstCard, secondCard) -> firstCard.getRank().value() - secondCard.getRank().value());
-			//myDeck.sort(Comparator.comparing((card) -> card.getRank()));
-			//myDeck.sort(Comparator.comparing(Card::getRank));
+			//2. compare with one criterium only
+			//myDeck.sort((firstCard, secondCard) -> firstCard.getRank().value() - secondCard.getRank().value());//lambda
+			//myDeck.sort(Comparator.comparing((card) -> card.getRank()));//lambda with comparing method of Comparator.
+			//myDeck.sort(Comparator.comparing(Card::getRank));//method reference. In particular, it would be helpful if your developers could create a Comparator instance that compares any object that can return a numerical value from a method such as getValue or hashCode. 
 			//compare with more than one criteria
 			/*
 			myDeck.sort((firstCard, secondCard) -> {
@@ -52,11 +55,18 @@ public class StandardDeck implements Deck {
 					Comparator.comparing(Card::getRank)
 							.thenComparing(Comparator.comparing(Card::getSuit)));*/
 			//reverse order
-			myDeck.sort(
+			
+			/*myDeck.sort(
 					Comparator.comparing(Card::getRank)
 							.reversed()
-							.thenComparing(Comparator.comparing(Card::getSuit)));
+							.thenComparing(Comparator.comparing(Card::getSuit)));*/
+			
+			myDeck.sort(
+					Comparator.comparing(Card::getRank)
+							.thenComparing(Comparator.comparing(Card::getSuit))
+							.reversed());
 			System.out.println(myDeck.deckToString());
+			
 	}
 	
 	@Override
@@ -151,7 +161,8 @@ public class StandardDeck implements Deck {
 									sb.append("A");
 									break;
 					}
-					sb.append("\n");
+					//sb.append("\n");
+					sb.append(" ");
 			}
 			
 			return sb.toString();
